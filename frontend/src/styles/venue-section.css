@@ -1,0 +1,43 @@
+.venue-section {
+    background: #111;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.venue-section h2 {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    font-weight: 800;
+}
+
+.venue-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.venue-image,
+.venue-map {
+    flex: 1 1 400px;
+    height: 260px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.venue-image {
+    background: #2e86de;
+}
+
+.venue-map {
+    background: #222;
+}

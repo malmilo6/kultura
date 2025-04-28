@@ -1,0 +1,107 @@
+.participant-form {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 40px 30px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    font-family: "Arial", sans-serif;
+    text-align: center;
+}
+
+.participant-form h2 {
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+.participant-form p {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.4;
+}
+
+.participant-form input[type="text"],
+.participant-form input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: transparent;
+}
+
+.participant-form input:focus {
+    border-bottom-color: #d14b8f;
+    outline: none;
+}
+
+.file-label {
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.file-label small {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.file-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 2px dashed #ccc;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    justify-content: center;
+    background-color: #f9f9f9;
+    transition: border 0.3s ease;
+}
+
+.file-box:hover {
+    border-color: #d14b8f;
+}
+
+.file-box input[type="file"] {
+    display: none;
+}
+
+.file-box span {
+    font-weight: 600;
+    color: #000;
+    font-size: 0.95rem;
+}
+
+.participant-form button {
+    margin-top: 30px;
+    width: 100%;
+    padding: 14px;
+    background: #d14b8f;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.participant-form button:hover {
+    background: #b93c7a;
+}
+
+@media (max-width: 600px) {
+    .participant-form {
+        margin: 30px 20px;
+        padding: 30px 20px;
+    }
+}

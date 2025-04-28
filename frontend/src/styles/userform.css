@@ -1,0 +1,60 @@
+.user-form {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.user-form h2 {
+    text-align: center;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.user-form input[type="text"],
+.user-form input[type="tel"],
+.user-form input[type="file"] {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.file-label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.user-form button {
+    padding: 12px;
+    background-color: #d14b8f;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user-form button:hover {
+    background-color: #b93c7a;
+}
+
+@media (max-width: 600px) {
+    .user-form {
+        margin: 30px 20px;
+        padding: 20px;
+    }
+
+    .user-form h2 {
+        font-size: 1.5rem;
+    }
+}

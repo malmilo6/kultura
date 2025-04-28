@@ -1,0 +1,45 @@
+.navbar {
+    background-color: white;
+    padding: 20px 40px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #1a1a1a;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #d14b8f; /* Pinkish shade from Figma */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+}

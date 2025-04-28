@@ -1,0 +1,39 @@
+.hero-banner {
+    width: 100vw;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.overlay {
+    max-width: 900px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1.2;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.overlay p {
+    margin: 20px 0;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
