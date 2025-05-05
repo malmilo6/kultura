@@ -1,23 +1,56 @@
-type Props = {
-    onRegisterClick: () => void;
-};
+/* src/components/HeroBanner.tsx */
+import heroBg from "../assets/hero-bg.png";
+import logo   from "../assets/logo.png";
+import "../styles/hero-banner.css";
+import paint from "../assets/paint-splash.png";
 
-export const HeroBanner = ({ onRegisterClick }: Props) => {
-    return (
-        <section className="hero-banner">
-            <div className="overlay">
-                <h3>Автофестиваль выставочного формата, под открытым небом</h3>
-                <h1>
-                    MOLDOVA <span>AUTO</span> <br /> WEEKEND FESTIVAL
-                </h1>
-                <p>9-10 АВГУСТА 2015 • ARENA CHIȘINĂU, MOLDOVA</p>
-                <div className="hero-buttons">
-                    <button className="outline-btn" onClick={onRegisterClick}>
-                        СТАТЬ УЧАСТНИКОМ
-                    </button>
-                    <button className="fill-btn">КУПИТЬ БИЛЕТ</button>
-                </div>
-            </div>
-        </section>
-    );
-};
+export const HeroBanner = () => (
+    <section
+        className="hero-banner"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+    >
+      <header className="hero-bar">
+        <img src={logo} alt="Kultura logo" className="hero-logo"/>
+
+        {/* links + CTAs sit on the same row */}
+        <nav className="hero-nav">
+          <ul className="nav-links">
+            <li><a href="#about">О ФЕСТИВАЛЕ</a></li>
+            <li><a href="#location">ЛОКАЦИЯ</a></li>
+            <li><a href="#hotels">ОТЕЛИ</a></li>
+            <li><a href="#contact">КОНТАКТЫ</a></li>
+          </ul>
+
+          <div className="nav-cta">
+            <button className="btn outline">
+              СТАТЬ УЧАСТНИКОМ
+            </button>
+            <button className="btn fill">КУПИТЬ БИЛЕТ</button>
+          </div>
+        </nav>
+      </header>
+      {/*  ===== HERO COPY =====  */}
+      <div className="hero-copy">
+        {/* single big splash behind the whole h1 */}
+        <img src={paint} alt="" className="splash-bg"/>
+
+        <h3 className="hero-sub">
+          Автофестиваль выставочного формата, под открытым небом
+        </h3>
+
+        <h1 className="hero-title">
+          MOLDOVA&nbsp;AUTO<br/>
+          WEEKEND FESTIVAL
+        </h1>
+
+        <p className="hero-date">
+          9‑10 АВГУСТА 2015&nbsp;&nbsp;•&nbsp;&nbsp;ARENA CHIȘINĂU, MOLDOVA
+        </p>
+      </div>
+    </section>
+);

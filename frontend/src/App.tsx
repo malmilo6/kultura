@@ -17,7 +17,7 @@ function App() {
     return (
         <>
             <div className={showForm ? "app-container blurred" : "app-container"}>
-                <HeroBanner onRegisterClick={() => setShowForm(true)} />
+                <HeroBanner />
                 <EventHighlights />
                 <AboutGrid />
                 <VenueSection />
