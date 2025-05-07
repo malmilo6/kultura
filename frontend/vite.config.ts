@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: '../public/dist',
+    outDir: 'public/dist',   // ← relative to project root
     emptyOutDir: false,
   },
   resolve: {
