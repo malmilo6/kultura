@@ -43,7 +43,26 @@
   border-radius:40px;
   cursor:pointer;
   transition:background .25s,color .25s;
+  text-transform: uppercase;
+
 }
+.hotel-cta{
+  align-self:flex-start;
+  margin-top: 10px;
+  padding: 14px 40px;
+  font: 900 1rem/1 "Russo One",sans-serif;
+  text-transform: uppercase;
+  background:#fff;
+  color:#000;
+  border-radius: 50px;
+  cursor:pointer;
+  transition: background .25s,border .25s;
+}
+.hotel-cta:hover{
+  background:#963bdd;
+  border-color:#963bdd;
+}
+
 
 /* ---------- TEXT RECTANGLE ---------- */
 .hotel-text{

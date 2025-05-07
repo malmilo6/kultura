@@ -10,7 +10,6 @@ export const ContactSection = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        alert("Message submitted (frontend only)");
     };
 
     return (

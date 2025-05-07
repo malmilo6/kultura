@@ -1,302 +1,171 @@
-/* ——— SECTION holds the photo ——— */
-.hero-banner {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 21 / 9;
-  min-height: 550px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ───────── HERO SECTION (photo) ───────── */
+.hero-banner{
+  position:relative;
+  width:100%;
+  aspect-ratio:21/9;
+  min-height:550px;
+  background:url("../assets/hero-bg.jpg") center/cover no-repeat;
   overflow: hidden;
 }
-
-.hero-banner::after {
-  content: "";
-  position: absolute;
-  inset: 0;                     /* cover entire section    */
-  background: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0)  0%,
-      rgba(0, 0, 0, 0.35) 40%,
-      rgba(0, 0, 0, 0.65) 70%,
-      #000 100%
-  );
-  pointer-events: none;         /* keep clicks on buttons  */
-  z-index: 2;                   /* above photo, below text */
+.hero-banner::after{
+  content:""; inset:0; position:absolute;
+  background:linear-gradient(to bottom,
+      rgba(0,0,0,0) 0%,
+      rgba(0,0,0,.35) 40%,
+      rgba(0,0,0,.65) 70%,
+      #000 100%);
+  z-index:2; pointer-events:none;
 }
 
-/* ——— HEADER ROW ——— */
-.hero-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  padding: 28px 64px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+/* ───────── HEADER BAR ───────── */
+.hero-bar{
+  position:absolute; inset:0 auto auto 0;
+  width:100%; padding:28px 64px;
+  display:flex; align-items:center;
+  justify-content:space-between;      /* ← NEW */
+  gap:48px;
+  z-index:6;
 }
+.hero-logo{ height:54px; flex-shrink:0; }
 
-/* logo left */
-.hero-logo { height: 54px; flex-shrink: 0; }
+/* BUY pill (always visible) */
+.buy-pill{
+  margin-left:auto;
+  font-weight:700; font-size:1rem;
+  padding:14px 40px; border-radius:48px;
+  background:#b24eff; border:3px solid #b24eff; color:#fff;
+  cursor:pointer; transition:background .25s,border .25s;
+}
+.buy-pill:hover{ background:#963bdd; border-color:#963bdd; }
 
-.hero-nav {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: 48px;          /* logo → links gap */
-  margin-left: 48px;
-}
-
-.nav-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-  letter-spacing: .5px;
-}
-.nav-cta {
-  margin-left: auto;      /* pushes CTAs to far right */
-  display: flex;
-  gap: 20px;
-}
-.btn {
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 14px 40px;
-  border-radius: 48px;
-  cursor: pointer;
-  transition: background .25s, color .25s, border .25s;
-}
-
-/* outline style */
-.btn.outline {
-  background: transparent;
-  border: 3px solid #fff;
-  color: #fff;
-}
-.btn.outline:hover { background:#fff; color:#000; }
-
-/* purple fill style */
-.btn.fill {
-  background: #b24eff;         /* match Figma purple */
-  border: 3px solid #b24eff;
-  color: #fff;
-}
-.btn.fill:hover  { background:#963bdd; border-color:#963bdd; }
-
-/* buttons right */
-.nav-right {
-  margin-left: auto;      /* pushes to far‑right */
-  display: flex;
-  gap: 18px;
-  flex-wrap: nowrap;
-}
-
-.nav-btn {
-  background: rgba(0,0,0,.75);
-  color: #fff;
-  font-weight: 600;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  padding: 10px 26px;
-  font-size: .9rem;
-  cursor: pointer;
-}
-
-/* ── HERO COPY BLOCK ────────────────────────────────────── */
-.hero-copy {
-  position: absolute;
-  bottom: 90px;             /* distance from bottom of photo */
-  left: 64px;               /* same side padding as header   */
-  max-width: 1060px;
-}
-.splash-bg {
-  position: absolute;
-  top: 10px;                /* adjust until it matches Figma */
-  left: 44%;
-  width: 40%;                /* wide enough for both lines    */
-  height: 100%;
-  /*max-width: 500px;*/
-  /*max-height: 500px;*/
-  pointer-events: none;
-  z-index: 0;                /* behind text */
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,.4)); /* optional depth */
-}
-.hero-title { position: relative; z-index: 1; }
-/* make sure all your header / copy elements have z‑index > 2 */
-.hero-bar   { position: absolute; z-index: 5; }   /* already */
-.hero-copy  { position: absolute; z-index: 5; }   /* already */
-
-.hero-sub {
-  font-weight: 400;
-  font-size: 1.15rem;
-  margin: 0 0 20px;
-}
-
-.hero-title {
-  font: 900 clamp(3rem, 6.5vw, 5.4rem) / 1.05 "Inter", sans-serif;
-  text-transform: uppercase;
-  margin: 0 0 28px;
-}
-
-.paint { position: relative; z-index: 1; padding: 0 8px; }
-.paint::before {                 /* purple splash behind “AUTO” */
-  content: "";
-  position: absolute;
-  inset: -40px -40px;
-  background: url("../assets/paint-splash.png") center/contain no-repeat;
-  z-index: -1;
-}
-
-.hero-date {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #51ff9a;          /* mint green from Figma */
-  letter-spacing: .5px;
-}
-
+/* burger (hidden on desktop) */
 .burger{
-  display:none;                     /* show in media‑query */
-  flex-direction:column;
-  gap:5px;
-  background:none;border:none;
-  cursor:pointer; z-index:10;       /* above overlay */
+  display:none;
+  flex-direction:column; gap:5px;
+  background:none; border:none; cursor:pointer;
+  margin-left:20px;
 }
 .burger span{
-  width:28px; height:3px;
-  background:#fff; border-radius:2px;
+  width:28px; height:3px; background:#fff; border-radius:2px;
   transition:transform .3s;
 }
 
+/* nav container */
+.hero-nav{
+  display:flex; align-items:center; gap:48px;
+  margin-left:48px;
+}
+.nav-links{
+  display:flex; gap:32px; list-style:none; margin:0; padding:0;
+}
+.nav-links a{
+  font:700 1.1rem "Inter",sans-serif;
+  color:#fff; text-transform:uppercase; text-decoration:none;
+  letter-spacing:.5px;
+}
+.btn.outline{
+  background:transparent; color:#fff; border:3px solid #fff;
+  padding:14px 40px; border-radius:48px; font-weight:700;
+}
+.btn.outline:hover{ background:#fff; color:#000; }
+/* helper class */
+.desktop-only{ /* hidden in mobile MQ */ }
 
+/* ───────── HERO COPY ───────── */
+.hero-copy{
+  position:absolute; bottom:90px; left:64px; max-width:1060px;
+  z-index:5;
+}
+.splash-bg{
+  position:absolute; left:44%; top:10px;
+  width:40%; height:100%; pointer-events:none;
+  filter:drop-shadow(0 2px 4px rgba(0,0,0,.4));
+}
+.hero-sub{
+  font-weight:400; font-size:1.15rem; margin:0 0 20px;
+}
+.hero-title{
+  font:900 clamp(3rem,6.5vw,5.4rem)/1.05 "Inter",sans-serif;
+  text-transform:uppercase; margin:0 0 28px; position:relative;
+  z-index:1;
+}
+.hero-date{
+  font-size:1.05rem; font-weight:700; color:#51ff9a; letter-spacing:.5px;
+}
 
-/*!* small bullet between date & place already typed with a bullet char (•) *!*/
-/*!*  OPTIONAL responsive tweaks  *!*/
-/*@media (max-width: 992px) {*/
+.buy-pill{ display:inline-flex !important; }
 
-/*  .hero-bar   { padding: 20px 32px; }*/
-/*  .hero-logo  { height: 46px; }*/
+.cta-group{
+  display:flex; gap:20px;
+  margin-left:auto;            /* pushes it to the edge */
+}
 
-/*  !* tighten space between logo ▸ links *!*/
-/*  .hero-nav   { gap: 24px; margin-left: 24px; }*/
-
-/*  !* smaller link size *!*/
-/*  .nav-links  { gap: 20px; }*/
-/*  .nav-links a { font-size: .95rem; }*/
-
-/*  !* slightly smaller buttons *!*/
-/*  .btn        { font-size: .90rem; padding: 11px 30px; }*/
-
-/*  .hero-copy  { left: 32px; bottom: 64px; }*/
-/*  .hero-title { font-size: clamp(2.4rem, 6vw, 4rem); }*/
-/*}*/
-
-/*@media (max-width: 640px) {*/
-
-/*  !* header turns into a column *!*/
-/*  .hero-bar        {*/
-/*    flex-direction: column;*/
-/*    align-items: flex-start;*/
-/*    gap: 18px;*/
-/*    padding: 18px 20px;*/
-/*  }*/
-
-/*  !* nav now vertical; links first, CTAs under them *!*/
-/*  .hero-nav        {*/
-/*    flex-direction: column;*/
-/*    align-items: flex-start;*/
-/*    gap: 16px;*/
-/*    margin-left: 0;          !* remove desktop push *!*/
-/*    width: 100%;*/
-/*  }*/
-
-/*  .nav-links       { flex-wrap: wrap; gap: 14px; }*/
-/*  .nav-links a     { font-size: .83rem; }*/
-
-/*  .nav-cta         { gap: 12px; flex-wrap: wrap; }*/
-
-/*  .btn             {*/
-/*    padding: 10px 22px;*/
-/*    font-size: .85rem;*/
-/*  }*/
-
-/*  !* headline block shifts & shrinks *!*/
-/*  .hero-copy       {*/
-/*    left: 20px;*/
-/*    bottom: 48px;*/
-/*    right: 20px;*/
-/*  }*/
-
-/*  .hero-title      { font-size: 2.2rem; line-height: 1.12; }*/
-/*  .hero-date       { font-size: .85rem; }*/
-
-/*  .splash-bg {*/
-/*    width: 40%;                !* wide enough for both lines    *!*/
-/*    height: 80%;*/
-/*    top: 60px*/
-/*  }*/
-/*}*/
-
-/* ───────────────────────────────────────────
-   MOBILE  ≤ 768 px   (updates)
-   ───────────────────────────────────────────*/
+.desktop-only{ display:inline-flex; }      /* default – desktop */
 @media (max-width:768px){
-  /* keep header a single row */
-  .hero-bar{
-    flex-direction:row;
-    align-items:center;
-    padding:18px 20px;
-  }
+  .desktop-only{ display:none; }           /* hide on phones */
+}
 
-  /* logo left … burger right */
-  .hero-logo{ height:46px; }
-  .burger   { display:flex; margin-left:auto; }
+/* ③ keep mobile order: logo | BUY | burger */
+@media (max-width:768px){
+  .buy-pill{ order:1; }        /* first inside .cta-group */
+  .burger  { order:2; display:flex; }
+}
 
-  /* ── sliding nav panel ─────────────────── */
+/* ───────────────────────────────────────
+   MOBILE (≤ 768 px)
+   ───────────────────────────────────────*/
+@media (max-width:768px){
+
+  /* keep header in one row */
+  .hero-bar{ padding:18px 20px; gap:12px; }
+
+  /* logo  ▸  BUY pill  ▸  burger */
+  .hero-logo   { height:46px; }
+  .buy-pill    { order:1; padding:10px 26px; font-size:.9rem; }
+  .burger      { order:2; display:flex; }
+
+  /* nav becomes slide‑down panel */
   .hero-nav{
-    position:absolute;
-    top:100%;            /* just under the bar */
-    left:0; right:0;
-    background:rgba(0,0,0,.9);
+    position:absolute; top:100%; left:0; right:0;
+    flex-direction:column; align-items:center;
+    background:rgba(0,0,0,.92);
     backdrop-filter:blur(4px);
-    flex-direction:column;
-    align-items:center;
-    overflow:hidden;
-
-    max-height:0;
+    max-height:0; overflow:hidden;
     transition:max-height .35s ease;
   }
   .hero-nav.open{ max-height:480px; }
 
-  /* links vertical */
   .nav-links{
-    flex-direction:column;
-    gap:22px;
-    padding:32px 0 10px;
+    flex-direction:column; gap:22px;
+    padding:32px 0 20px; text-align:center;
   }
-  .nav-links a{ font-size:1.1rem; }
+  .nav-links a{ font-size:1.05rem; }
 
-  /* keep only BUY‑ticket pill */
-  .desktop‑only{ display:none; }      /* “Стать участником” */
+  /* hide 2‑nd CTA */
+  .desktop-only{ display:none; }
 
-  .nav-cta{
-    padding-bottom:32px;
-  }
-
-  /* hero copy room */
+  /* hero copy shrinks & re‑positions */
   .hero-copy{ left:20px; right:20px; bottom:48px; }
-  .hero-title{ font-size:2.2rem; line-height:1.14; }
-  .hero-date { font-size:.9rem; }
+  .hero-title{ font-size:2.2rem; line-height:1.14; display: block}
+  .hero-date { font-size:12px; }
 
   .splash-bg{ width:40%; height:80%; top:60px; }
+
 }
+
+.hero-nav          { display:flex; align-items:center; gap:48px; }
+.desktop-only      { margin-left:32px; }   /* little gap before white pill */
+.buy-pill          { order:2; }
+
+@media (max-width:768px){
+  .hero-bar   { padding:18px 20px; }
+  .hero-nav   {      /* slide‑down menu as before */ }
+  .buy-pill   { order:1; margin-left:0; }
+  .burger     { order:2; display:flex; }
+}
+
+/* — optional hamburger “X” animation — */
+.burger.open span:nth-child(1){ transform:translateY(8px) rotate(45deg); }
+.burger.open span:nth-child(2){ opacity:0; }
+.burger.open span:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
+

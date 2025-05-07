@@ -17,19 +17,32 @@ export const HotelsSection = () => (
       </figure>
 
       {/* ---- Text side ---- */}
-      <div className="hotel-text">
-        <p>
-          Удобным вариантом для проживания станут отели, расположенные в городе
-          Кишинёв.
-        </p>
-        <ul>
-          <li>Отель #1</li>
-          <li>Отель #2</li>
-          <li>Отель #3</li>
-          <li>Отель #4</li>
-          <li>Отель #5</li>
-        </ul>
-      </div>
+{/* ---- Promo / text card ---- */}
+<div className="hotel-text">
+
+  <h3>В&nbsp;поиске&nbsp;партнёров</h3>
+
+  <p>
+    Удобным вариантом для проживания станут отели, расположенные в&nbsp;городе
+    Кишинёв. Мы открыты к&nbsp;сотрудничеству и&nbsp;будем рады
+    добавить ваш отель в&nbsp;рекомендованный список!
+  </p>
+
+  <ul className="hotel-list">
+    <li>Ваш отель #1</li>
+    <li>Ваш отель #2</li>
+    <li>Ваш отель #3</li>
+    <li>Ваш отель #4</li>
+    <li>Ваш отель #5</li>
+  </ul>
+
+  <button
+    className="hotel-cta"
+    onClick={() => window.open("mailto:sponsorship@kultura.md")}
+  >
+    Связаться
+  </button>
+</div>
 
     </div>
   </section>
