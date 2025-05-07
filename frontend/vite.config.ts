@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [react()],
   build: {
     outDir: '../public/dist',
-    emptyOutDir: true,
+    emptyOutDir: false,
   },
   resolve: {
     alias: {
