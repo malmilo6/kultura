@@ -14,7 +14,7 @@ export const ContactSection = () => {
     };
 
     return (
-        <section className="contact-section">
+        <section className="contact-section" id="contact">
             <h2>ОСТАЛИСЬ ВОПРОСЫ?</h2>
             <p>Заполните форму ниже, и мы свяжемся с вами как можно скорее.</p>
 

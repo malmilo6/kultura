@@ -1,72 +1,240 @@
+/* ------------- GLOBAL FONT ------------ */
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+/* ------------- WRAPPER GRID ----------- */
 .event-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+  gap: 48px;
+  padding: 80px 20px;
+  background: #000;
+}
+
+/* ------------- SHARED CARD ------------ */
+.card {
+  position: relative;
+  border-radius: 18px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+/* =======================================
+   PURPLE TICKET
+   ===================================== */
+.ticket {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 70px;
+  min-height: 280px;           /* height of your PNG */
+  font-family: "Inter", sans-serif;
+}
+
+/* left column */
+.t-left {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;                   /* distance between headline and button */
+}
+.ticket h3 {
+  font-family: "Russo One", sans-serif;
+  font-size: 2.6rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+.ticket button {
+  align-self: flex-start;
+  padding: 22px 60px;
+  background: #fff;
+  color: #000;
+  font: 900 1.2rem/1 "Russo One", sans-serif;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+/* right column */
+.t-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  margin-top: -6px;            /* nudge upward to align with h3 */
+}
+.big-date {
+  font-family: "Russo One", sans-serif;
+  font-size: 4.8rem;
+  line-height: 1;
+}
+.month {
+  font-family: "Russo One", sans-serif;
+  font-size: 1.6rem;
+}
+.t-right small {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* =======================================
+   GREY PARTICIPANT BADGE
+   ===================================== */
+.badge {
+  min-height: 280px;           /* same height as ticket */
+  padding: 40px 36px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+  font-family: "Inter", sans-serif;
+}
+.badge h3 {
+  font-family: "Russo One", sans-serif;
+  font-size: 1.8rem;
+  margin: 0;
+}
+.badge p {
+  font-size: 1rem;
+  margin: 0;
+  opacity: 0.9;
+}
+.badge button {
+  align-self: flex-start;
+  padding: 22px 60px;
+  background: #fff;
+  color: #000;
+  font: 900 1.2rem/1 "Russo One", sans-serif;
+  border: none;
+  border-radius: 60px;
+  cursor: pointer;
+}
+
+/* optional vertical slot already baked into PNG—
+   keep this if you still want a CSS fallback */
+/*
+.badge::after {
+  content: "";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  width: 10px;
+  height: 120px;
+  background: #000;
+  border-radius: 6px;
+  transform: translateY(-50%);
+  opacity: 0.9;
+  pointer-events: none;
+}
+*/
+
+/* ------------ RESPONSIVE (single‑column) -------- */
+@media (max-width: 700px) {
+  .event-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  /* ticket stacks internally */
+  .ticket {
+    flex-direction: column;
+    padding: 40px 36px;
+  }
+  .t-left {
     gap: 30px;
-    background: #000;
-    padding: 50px 20px;
-    color: white;
-}
-
-.highlight-card {
-    width: 320px;
-    max-width: 90%;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.ticket-card {
-    background: #b84fc6;
-}
-
-.ticket-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
-.ticket-card p {
+    align-items: flex-start;
+  }
+  .t-right {
+    align-items: flex-start;
+    text-align: left;
+    margin-top: 30px;
+  }
+  .big-date {
+    font-size: 3.2rem;
+  }
+  .ticket button {
+    padding: 18px 46px;
     font-size: 1rem;
-    margin-bottom: 20px;
+  }
 }
 
-.event-date {
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 10px;
+/* ------------ RESPONSIVE  (single‑column) ----------------- */
+@media (max-width: 700px) {
+
+  /* outer grid stacks one card per row */
+  .event-highlights{
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Ticket card stacks internally ---------------------- */
+  .ticket{
+    flex-direction: column;      /* ↓ stack left ↑ right */
+    padding: 40px 36px;
+  }
+
+  .badge {
+        height: 390px;
+
+  }
+
+  /* left column (headline + button) */
+  .t-left{
+    gap: 28px;
+    align-items: flex-start;
+  }
+
+  /* right column (date + month + arena) → move below headline */
+  .t-right{
+    order: -1;                   /* show right after .t‑left headline */
+    align-items: flex-start;
+    text-align: left;
+    margin: 24px 0 0;
+  }
+
+  .big-date { font-size: 3.2rem; }
+
+  /* button a bit narrower */
+  .badge  button{
+    width:100%;                  /* full card width */
+    max-width:420px;             /* but not wider than desktop pill */
+    align-self:center;           /* centre inside card */
+    padding:18px 0;              /* same vertical padding */
+    font:900 1.05rem/1 "Russo One",sans-serif;
+    border-radius:60px;
+  }
+
+    .ticket  button{
+    width: 300px;                  /* full card width */
+    max-width:420px;             /* but not wider than desktop pill */
+    align-self:center;           /* centre inside card */
+    padding:18px 0;              /* same vertical padding */
+    font:900 1.05rem/1 "Russo One",sans-serif;
+    border-radius:60px;
+  }
+
+
+  /* keep mobile artwork ‑ but still show text */
+  .ticket{
+    background-image:url("../assets/ticket1_w.png") !important;
+  }
+  .badge{
+    background-image:url("../assets/ticket2_w.png") !important;
+  }
 }
 
-.register-card {
-    background: #eaeaea;
-    color: #000;
-}
+/* -------- MOBILE  (≤ 700 px)  -------------------------------- */
+/*@media (max-width:700px){*/
 
-.register-card h3 {
-    font-size: 1.5rem;
-}
+/*  !* …your other mobile rules… *!*/
 
-.register-card p {
-    margin: 10px 0 20px;
-}
-
-.register-card button {
-    padding: 12px 24px;
-    border: none;
-    background: #d14b8f;
-    color: white;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.register-card button:hover {
-    background: #b93c7a;
-}
-
-@media (max-width: 768px) {
-    .highlight-card {
-        width: 100%;
-    }
-}
+/*  !* unified pill buttons  — stretch to full width *!*/
+/*  .ticket button,*/
+/*  .badge  button{*/
+/*    width:100%;                 !* 100 % of the card *!*/
+/*    max-width:none;             !* no upper clamp      *!*/
+/*    align-self:stretch;         !* ⟸ fills cross‑axis  *!*/
+/*    padding:18px 0;*/
+/*    font:900 1.05rem/1 "Russo One",sans-serif;*/
+/*    border-radius:60px;*/
+/*  }*/
+/*}*/

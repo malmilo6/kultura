@@ -1,38 +1,185 @@
-.about-section {
-    padding: 60px 20px;
-    background-color: #000;
-    color: white;
-    text-align: center;
+/* ---------- SECTION ---------- */
+.about-section{
+  padding:100px 2vw;          /* tiny gutters */
+  background:#000; color:#fff;
+  text-align:center; font-family:"Inter",sans-serif;
+}
+.about-section h2{
+  font:900 2.8rem/1 "Russo One",sans-serif;
+  margin-bottom:34px;
+}
+.about-section p{
+  max-width:1080px; margin:0 auto 70px;
+  font-size:1.1rem; line-height:1.55; color:#ccc;
 }
 
-.about-section h2 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
+/* ---------- GRID ---------- */
+.about-grid{
+  display:grid; gap:36px;
+  width:100%; max-width:none; /* full width */
+  grid-template-columns:repeat(3,1fr);   /* desktop = 3 cols */
 }
 
-.about-section p {
-    font-size: 1rem;
-    max-width: 800px;
-    margin: 0 auto 40px;
-    line-height: 1.5;
-    color: #ccc;
+
+/* ---------- CARD ---------- */
+.about-card{
+  position:relative;
+  border-radius:18px;
+  background-size:cover;
+  background-position:center;
+  overflow:hidden;
+  transition:transform .25s,box-shadow .25s;
+  cursor:default; user-select:none;
+}
+.about-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 16px 28px rgba(0,0,0,.4);
 }
 
-.about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+/* dark overlay & label */
+.about-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background:rgba(0,0,0,.35);
+  transition:background .25s;
+}
+.about-card:hover::before{ background:rgba(0,0,0,.15); }
+
+.card-label{
+  position:absolute;
+  top:24px;                 /* distance from the top edge   */
+  left:24px;                /* distance from the left edge  */
+  z-index:2;                /* above the overlay            */
+
+  font:900 1.9rem/1 "Russo One",sans-serif;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+  pointer-events:none;
 }
 
-.about-card {
-    padding: 50px 20px;
-    border-radius: 12px;
-    font-weight: 700;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-    color: white;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+.about-card::before{
+  content:"";
+  position:absolute; inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0)   30%,      /* transparent top 30 %  */
+    rgba(0,0,0,.55) 100%      /* darker at the bottom */
+  );
+  transition:background .25s;
+}
+.about-card:hover::before{
+  background:linear-gradient(
+    to bottom,
+    rgba(0,0,0,0)   30%,
+    rgba(0,0,0,.35) 100%      /* slightly lighter on hover */
+  );
+}
+
+/* ---------- INTRO ROW (heading left, text right) ---------- */
+.about-intro{
+  display: flex;
+  align-items: flex-start;     /* top‑align the two texts */
+  gap: 40px;                  /* space between heading and paragraph */
+  max-width: 1400px;
+  margin: 0 auto 60px;
+  padding: 0 2vw;
+}
+
+.about-intro h2{
+  font: 900 3.2rem/1 "Russo One", sans-serif;
+  margin: 0;
+  white-space: nowrap;        /* keep heading on a single line */
+}
+
+.about-intro p{
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: #ccc;
+  margin: 0;
+  max-width: 800px;           /* optional wrap width for paragraph */
+  text-align: left;
+}
+
+.green{ color:#12ce6a; }     /* matches screenshot accent */
+
+/* ---------- Stack on narrow screens ---------- */
+@media(max-width: 900px){
+  .about-intro{
+    flex-direction: column;
+    align-items: flex-start;   /* still left‑aligned */
+    gap: 24px;
+  }
+  .about-intro h2{ white-space: normal; }
+}
+
+/* make the section a positioning context */
+.about-section { position: relative; overflow: hidden; }
+
+/* ribbon wrapper pins them to the bottom */
+.about-ribbons{
+  position:absolute;
+  bottom:-30px;               /* was -60px   (moves ribbons farther down) */
+  left:0;
+  width:100%;
+  pointer-events:none;
+}
+/* each ribbon is 200 vw wide so it covers diagonal */
+.ribbon{
+  position: absolute;
+  left: -50vw;               /* start far left */
+  top: -150px;
+  width: 200vw;
+  padding: 24px 0;            /* was 14px */
+  font: 900 1.05rem/1 "Russo One", sans-serif;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+    font-size: 1.15rem;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,.25));
+/* slightly larger text */
+
+}
+
+/* top ribbon */
+.ribbon.purple{
+  background:#9654ff;
+  transform: rotate(-5deg) translateY(-30px);
+}
+
+/* bottom ribbon */
+.ribbon.green{
+  background:#4ed28a;
+  transform: rotate(5deg) translateY(30px);
+}
+
+/* optional thin border same as screenshot */
+.ribbon::before,
+.ribbon::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+}
+
+.ribbon.purple{  transform:rotate(-5deg) translateY(-10px); } /* was -30px */
+.ribbon.green {  transform:rotate( 5deg) translateY( 10px); } /* was
+
+/* smaller text on phones */
+@media(max-width:600px){
+  .ribbon{ font-size:.8rem; }
+}
+
+/* ---------- BREAK‑POINTS ---------- */
+@media (max-width:1199px){          /* tablet landscape */
+  .about-grid{ grid-template-columns:repeat(2,1fr); gap:32px; }
+}
+
+@media (max-width:767px){           /* phone */
+  .about-grid{ grid-template-columns:1fr; gap:28px; }
+  .about-section{ padding:80px 4vw; }
+  .card-label{ font-size:1.5rem; }
+    .about-intro h2{
+    white-space: nowrap;                 /* no wrapping        */
+    font-size: clamp(1.8rem, 10vw, 2.6rem); /* fluid size 1.8‑2.6 rem */
+  }
 }

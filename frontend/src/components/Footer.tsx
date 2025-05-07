@@ -8,7 +8,7 @@ export const Footer = () => {
 
                 <ul className="footer-links">
                     <li><a href="#about">О фестивале</a></li>
-                    <li><a href="#contact">Контакты</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
                     <li><a href="#register">Регистрация</a></li>
                     <li><a href="#tickets">Билеты</a></li>
                 </ul>

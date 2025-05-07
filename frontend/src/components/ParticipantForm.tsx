@@ -1,82 +1,90 @@
-import React, { useState } from "react";
+import { useRef } from "react";
 import "../styles/participant-form.css";
 
-export const ParticipantForm = () => {
-    const [formData, setFormData] = useState({
-        carModel: "",
-        name: "",
-        phone: "",
-        social: ""
-    });
-    const [, setFiles] = useState<FileList | null>(null);
+interface Props {
+  onClose: () => void;
+}
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
+export const UserFormModal = ({ onClose }: Props) => {
+  const fileRef = useRef<HTMLInputElement | null>(null);
 
-    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
-            setFiles(e.target.files);
-        }
-    };
+  return (
+    <div className="modal-backdrop" onClick={onClose}>
+      {/* stop click‑through */}
+      <div className="form-wrapper" onClick={(e) => e.stopPropagation()}>
+        <button className="close-btn" onClick={onClose} aria-label="Close">
+          ×
+        </button>
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        alert("Form submitted (frontend only)");
-    };
+        {/* ===== redesigned header ===== */}
+        <header className="form-head">
+          <h3>РЕГИСТРАЦИЯ&nbsp;УЧАСТНИКА</h3>
 
-    return (
-        <form className="participant-form" onSubmit={handleSubmit}>
-            <h2>РЕГИСТРАЦИЯ УЧАСТНИКА</h2>
-            <p>
-                Регистрация на выставочную часть авто фестиваля <br />
-                <strong>9-10 Августа 2015, Arena Chișinău, Moldova</strong><br />
-                Введите данные ниже чтобы подать заявку на регистрацию <br />
-                в выставке <strong>Auto Weekend Festival 2025</strong>
-            </p>
+          <p className="lead">
+            Регистрация на выставочную часть авто&nbsp;фестиваля<br />
+            <strong>9‑10 Августа 2015,&nbsp;Arena Chișinău, Молдова</strong>
+          </p>
 
+          <p className="note">
+            Введите данные ниже чтобы подать заявку на регистрацию<br />
+            в выставке Auto Weekend Festival 2025
+          </p>
+        </header>
+
+        {/* ===== form ===== */}
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            alert("Отправлено!");
+          }}
+        >
+          <label>
+            Модель и марка автомобиля *<br />
+            <input required placeholder="Введите модель" />
+          </label>
+
+          <label>
+            Ваше имя<br />
+            <input placeholder="Введите имя" />
+          </label>
+
+          <label>
+            Контактный номер телефона *<br />
+            <input required placeholder="+373 ___ ___ ___" />
+          </label>
+
+          <label className="file-label">
+            Есть фотографии машины?<br />
+            <span className="note">
+              Загрузите максимум 5 файлов поддерживаемого типа.<br />
+              Размер файла — не более 10 Mb.
+            </span>
+            <button
+              type="button"
+              className="file-btn"
+              onClick={() => fileRef.current?.click()}
+            >
+              + Добавить файл
+            </button>
             <input
-                type="text"
-                name="carModel"
-                placeholder="МОДЕЛЬ И МАРКА АВТОМОБИЛЯ *"
-                required
-                value={formData.carModel}
-                onChange={handleChange}
+              ref={fileRef}
+              type="file"
+              accept="image/*"
+              multiple
+              hidden
             />
-            <input
-                type="text"
-                name="name"
-                placeholder="ВАШЕ ИМЯ"
-                value={formData.name}
-                onChange={handleChange}
-            />
-            <input
-                type="tel"
-                name="phone"
-                placeholder="КОНТАКТНЫЙ НОМЕР ТЕЛЕФОНА *"
-                required
-                value={formData.phone}
-                onChange={handleChange}
-            />
+          </label>
 
-            <label className="file-label">
-                ЕСТЬ ФОТОГРАФИИ МАШИНЫ? <br />
-                <small>Загрузите максимум 5 файлов поддерживаемого типа. Размер файла — не более 10 MB.</small>
-                <div className="file-box">
-                    <input type="file" onChange={handleFileChange} accept="image/*" multiple />
-                    <span>➕ ДОБАВИТЬ ФАЙЛ</span>
-                </div>
-            </label>
+          <label>
+            Ссылка на вас в соц сетях<br />
+            <input placeholder="https://instagram.com/…" />
+          </label>
 
-            <input
-                type="text"
-                name="social"
-                placeholder="ССЫЛКА НА ВАС В СОЦ СЕТЯХ"
-                value={formData.social}
-                onChange={handleChange}
-            />
-
-            <button type="submit">ОТПРАВИТЬ</button>
+          <button type="submit" className="submit-btn">
+            Отправить
+          </button>
         </form>
-    );
+      </div>
+    </div>
+  );
 };

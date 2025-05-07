@@ -1,80 +1,82 @@
-.hotels-section {
-    background: #111;
-    color: white;
-    padding: 60px 20px;
-    text-align: center;
+/* ---------- SECTION ---------- */
+.hotels-section{
+  background:#000;
+  color:#fff;
+  padding:100px 4vw;
+  text-align:center;
+  font-family:"Inter",sans-serif;
+}
+.hotels-section h2{
+  font:900 2.6rem/1 "Russo One",sans-serif;
+  text-transform:uppercase;
+  margin-bottom:60px;
 }
 
-.hotels-section h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    font-weight: 800;
+/* ---------- GRID ---------- */
+.hotels-grid{
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr;    /* same 2:1 ratio as venue */
+  gap:36px;
 }
 
-.hotels-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
-    justify-content: center;
+/* ---------- PHOTO RECTANGLE ---------- */
+.hotel-photo{
+  position:relative;
+  border-radius:18px;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+  min-height:380px;                 /* same height as venue */
+  transition:transform .35s ease;
 }
 
-.hotel-image,
-.hotel-text {
-    flex: 1 1 400px;
-    padding: 30px;
-    border-radius: 14px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+.hotel-photo button{
+  position:absolute;
+  left:32px; bottom:32px;
+  padding:18px 46px;
+  border:none;
+  background:#fff;
+  color:#000;
+  font:900 1rem/1 "Russo One",sans-serif;
+  border-radius:40px;
+  cursor:pointer;
+  transition:background .25s,color .25s;
 }
 
-.hotel-image {
-    background: #4cb6ff;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    position: relative;
+/* ---------- TEXT RECTANGLE ---------- */
+.hotel-text{
+  background:#1b1b1b;
+  border-radius:18px;
+  padding:50px 40px;
+  text-align:left;
+  font-size:1rem;
+  line-height:1.6;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  min-height:380px;                 /* keeps same height */
+  box-shadow:0 6px 22px rgba(0,0,0,.35);
 }
+.hotel-text p{ margin:0 0 24px; }
+.hotel-text ul{ margin:0; padding-left:20px; }
+.hotel-text li{ margin-bottom:10px; }
 
-.hotel-image button {
-    padding: 12px 20px;
-    border: none;
-    background: #fff;
-    color: #000;
-    font-weight: 600;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    margin-bottom: 10px;
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:992px){
+  .hotels-grid{
+    grid-template-columns:1fr;      /* stack like venue */
+    gap:28px;
+  }
+  .hotel-photo,
+  .hotel-text{ min-height:320px; }
+  .hotel-photo button{ left:24px; bottom:24px; padding:16px 40px; }
+  .hotel-text{ padding:40px 32px; }
 }
-
-.hotel-image button:hover {
-    background: #e1e1e1;
-}
-
-.hotel-text {
-    background: #222;
-    text-align: left;
-}
-
-.hotel-text p {
-    font-size: 1rem;
-    margin-bottom: 16px;
-}
-
-.hotel-text ul {
-    padding-left: 20px;
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-@media (max-width: 768px) {
-    .hotels-grid {
-        flex-direction: column;
-    }
-
-    .hotel-image,
-    .hotel-text {
-        width: 100%;
-    }
+@media(max-width:600px){
+  .hotel-photo,
+  .hotel-text{ min-height:260px; }
+  .hotel-photo button{ left:20px; bottom:20px; padding:14px 34px; }
+  .hotel-text{ padding:36px 26px; }
 }
