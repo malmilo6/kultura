@@ -38,7 +38,7 @@ export const HotelsSection = () => (
 
   <button
     className="hotel-cta"
-    onClick={() => window.open("mailto:sponsorship@kultura.md")}
+    onClick={() => window.open("mailto:autoposterprintmd@gmail.com")}
   >
     Связаться
   </button>

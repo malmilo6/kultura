@@ -83,19 +83,56 @@
 .hotel-text li{ margin-bottom:10px; }
 
 /* ---------- RESPONSIVE ---------- */
-@media(max-width:992px){
+/* ───────────────────────────────────────
+   PHONES ≤ 992 px
+   ───────────────────────────────────────*/
+@media (max-width:992px){
+
+  /* 1 ➜ stack photo over text */
   .hotels-grid{
-    grid-template-columns:1fr;      /* stack like venue */
-    gap:28px;
+    grid-template-columns:1fr;      /* one column */
+    gap:32px;
   }
+
+  /* 2 ➜ let rectangles size themselves (no forced 380 px) */
   .hotel-photo,
-  .hotel-text{ min-height:320px; }
-  .hotel-photo button{ left:24px; bottom:24px; padding:16px 40px; }
-  .hotel-text{ padding:40px 32px; }
+  .hotel-text{
+    min-height:auto;
+    width:100%;
+  }
+
+  /* 3 ➜ smaller paddings / fonts */
+  .hotel-photo button{
+    left:20px; bottom:20px;
+    padding:16px 36px;
+    font-size:.9rem;
+  }
+
+  .hotel-text{
+    padding:36px 26px;
+    font-size:clamp(.9rem,4vw,1rem);
+    line-height:1.55;
+  }
+
+  .hotel-text p{ margin-bottom:20px; }
+  .hotel-text li{ margin-bottom:8px; font-size:clamp(.88rem,3.6vw,.95rem); }
+    .hotels-section   { padding-top:40px; }   /* was 100px */
+  .hotels-section h2{ margin-bottom:36px; } /* was 60px  */
 }
-@media(max-width:600px){
-  .hotel-photo,
-  .hotel-text{ min-height:260px; }
-  .hotel-photo button{ left:20px; bottom:20px; padding:14px 34px; }
-  .hotel-text{ padding:36px 26px; }
+
+/* ───────────────────────────────────────
+   SMALL PHONES ≤ 600 px   (tighter)
+   ───────────────────────────────────────*/
+@media (max-width:600px){
+
+  .hotel-photo button{
+    padding:14px 30px;
+    font-size:.85rem;
+  }
+
+  .hotel-text{
+    padding:32px 22px;
+  }
+    .hotels-section   { padding-top:32px; }
+  .hotels-section h2{ margin-bottom:28px; }
 }

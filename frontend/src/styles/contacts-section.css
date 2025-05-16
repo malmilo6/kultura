@@ -1,0 +1,114 @@
+/* ─────────────────────────────────────────
+   CONTACTS  (section wrapper)
+   ───────────────────────────────────────── */
+.contacts-section{
+  background:#000;
+  color:#fff;
+  padding:80px 5vw;                /* roomy side-gutters on phones */
+  font-family:"Inter",sans-serif;
+}
+
+/* ----------------------------------------
+   GRID  (default = 1 col for mobile)
+   ---------------------------------------- */
+.contacts-grid{
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr;        /* ← single column first */
+  gap:48px;
+}
+
+/* ----------------------------------------
+   LEFT  block
+   ---------------------------------------- */
+.contacts-info h2{
+  font:900 clamp(2.4rem,8vw,3.4rem)/1 "Druk Wide Cyr",sans-serif;
+  text-transform:uppercase;
+  margin:0 0 46px;
+}
+
+.label{
+  color:#4ed28a;
+  font-weight:600;
+  margin:34px 0 6px;
+  font-size:clamp(.9rem,3vw,.95rem);
+}
+
+.value{
+  font:700 clamp(1.2rem,5vw,1.7rem)/1.25 "Druk Wide Cyr",sans-serif;
+  word-break:break-word;
+}
+
+/* ----------------------------------------
+   FORM  (right block)
+   ---------------------------------------- */
+.contact-form{
+  background:#fff;
+  color:#000;
+  border-radius:14px;
+  padding:48px 38px 60px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.contact-form h3{
+  font:900 clamp(1.3rem,5.4vw,1.75rem)/1.25 "Russo One",sans-serif;
+  text-transform:uppercase;
+  margin:0 0 22px;
+}
+.contact-form label{
+  display:flex; flex-direction:column;
+  gap:12px;
+  font:700 .85rem/1 "Russo One",sans-serif;
+  text-transform:uppercase;
+  color:#7f7f91;
+}
+
+.contact-form input,
+.contact-form textarea{
+  background:#fff;
+  color:#000;
+  border:none;
+  border-bottom:2px solid #d0d0d8;
+  padding:6px 0 10px;
+  font:600 1rem "Inter",sans-serif;
+  outline:none;
+  transition:border-color .25s;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{ border-bottom-color:#b24eff; }
+
+.contact-form ::placeholder{ color:#a0a3af; }
+
+/* fix browser autofill “yellow” */
+.contact-form input:-webkit-autofill,
+.contact-form textarea:-webkit-autofill{
+  -webkit-box-shadow:0 0 0 1000px #fff inset;
+          box-shadow:0 0 0 1000px #fff inset;
+  -webkit-text-fill-color:#000;
+  transition:background-color 600000s 0s,color 600000s 0s;
+}
+
+.submit-btn{
+  align-self:flex-start;
+  margin-top:14px;
+  padding:18px 60px;
+  font:900 .95rem "Russo One",sans-serif;
+  text-transform:uppercase;
+  background:#b24eff;
+  color:#fff; border:none; border-radius:60px;
+  cursor:pointer; transition:background .25s;
+}
+.submit-btn:hover{ background:#963bdd; }
+.submit-btn:disabled{ opacity:.55; cursor:not-allowed; }
+
+/* ─────────────────────────────────────────
+   DESKTOP  (≥ 901 px) – 2 columns
+   ───────────────────────────────────────── */
+@media(min-width:901px){
+  .contacts-grid{
+    grid-template-columns:1fr 1fr; /* info | form */
+    gap:80px;
+  }
+}

@@ -3,7 +3,7 @@ import { EventHighlights } from "./components/EventHighlights";
 import {AboutGrid} from "./components/AboutGrid.tsx";
 import {VenueSection} from "./components/VenueSection.tsx";
 import {HotelsSection} from "./components/HotelsSection.tsx";
-import {ContactSection} from "./components/ContactSection.tsx";
+import {ContactsSection} from "./components/ContactSection.tsx";
 import {Footer} from "./components/Footer.tsx";
 
 
@@ -22,7 +22,7 @@ function App() {
                 <AboutGrid />
                 <VenueSection />
                 <HotelsSection />
-                <ContactSection />
+                <ContactsSection />
                 <Footer />
             </div>
 

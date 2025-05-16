@@ -49,7 +49,7 @@
   padding: 22px 60px;
   background: #fff;
   color: #000;
-  font: 900 1rem/1 "Russo One",sans-serif;
+  font: 900 1rem/1 "Druk Wide Cyr",sans-serif;
   text-transform: uppercase;  border: none;
   border-radius: 60px;
   cursor: pointer;
@@ -105,7 +105,7 @@
   padding: 22px 60px;
   background: #fff;
   color: #000;
-  font: 900 1rem/1 "Russo One",sans-serif;
+  font: 900 1rem/1 "Druk Wide Cyr",sans-serif;
   text-transform: uppercase;  border: none;
   border-radius: 60px;
   cursor: pointer;
@@ -129,34 +129,34 @@
 }
 */
 
-/* ------------ RESPONSIVE (single‑column) -------- */
-@media (max-width: 700px) {
-  .event-highlights {
-    grid-template-columns: 1fr;
-  }
+/*!* ------------ RESPONSIVE (single‑column) -------- *!*/
+/*@media (max-width: 700px) {*/
+/*  .event-highlights {*/
+/*    grid-template-columns: 1fr;*/
+/*  }*/
 
-  /* ticket stacks internally */
-  .ticket {
-    flex-direction: column;
-    padding: 40px 36px;
-  }
-  .t-left {
-    gap: 30px;
-    align-items: flex-start;
-  }
-  .t-right {
-    align-items: flex-start;
-    text-align: left;
-    margin-top: 30px;
-  }
-  .big-date {
-    font-size: 3.2rem;
-  }
-  .ticket button {
-    padding: 18px 46px;
-    font-size: 1rem;
-  }
-}
+/*  !* ticket stacks internally *!*/
+/*  .ticket {*/
+/*    flex-direction: column;*/
+/*    padding: 40px 36px;*/
+/*  }*/
+/*  .t-left {*/
+/*    gap: 30px;*/
+/*    align-items: flex-start;*/
+/*  }*/
+/*  .t-right {*/
+/*    align-items: flex-start;*/
+/*    text-align: left;*/
+/*    margin-top: 30px;*/
+/*  }*/
+/*  .big-date {*/
+/*    font-size: 3.2rem;*/
+/*  }*/
+/*  .ticket button {*/
+/*    padding: 18px 46px;*/
+/*    font-size: 1rem;*/
+/*  }*/
+/*}*/
 
 /* ------------ RESPONSIVE  (single‑column) ----------------- */
 @media (max-width: 700px) {
@@ -181,6 +181,7 @@
   .t-left{
     gap: 28px;
     align-items: flex-start;
+    margin-top: 20px;;
   }
 
   /* right column (date + month + arena) → move below headline */
