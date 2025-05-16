@@ -4,8 +4,16 @@
   width:100%;
   aspect-ratio:21/9;
   min-height:550px;
-  background:url("../assets/hero-bg.jpg") center/cover no-repeat;
   overflow: hidden;
+}
+.hero-bg{
+  position:relative;
+  inset:0;                     /* stretch to section */
+  width:100%;
+  height:100%;
+  object-fit:cover;            /* behave like background-image */
+  z-index:1;                   /* below gradient & content */
+  pointer-events:none;         /* keep header/buttons clickable */
 }
 .hero-banner::after{
   content:""; inset:0; position:absolute;
@@ -31,10 +39,12 @@
 /* BUY pill (always visible) */
 .buy-pill{
   margin-left:auto;
-  font-weight:700; font-size:1rem;
+  font-weight:700;
+  font-family: "Druk Wide Cyr", "sans-serif";
   padding:14px 40px; border-radius:48px;
   background:#b24eff; border:3px solid #b24eff; color:#fff;
   cursor:pointer; transition:background .25s,border .25s;
+  font-size: 12px;
 }
 .buy-pill:hover{ background:#963bdd; border-color:#963bdd; }
 
@@ -85,7 +95,7 @@
   font-weight:400; font-size:1.15rem; margin:0 0 20px;
 }
 .hero-title{
-  font:900 clamp(3rem,6.5vw,5.4rem)/1.05 "Inter",sans-serif;
+  font:900 clamp(3rem,6.5vw,5.4rem)/1.05 "Druk Wide Cyr",sans-serif;
   text-transform:uppercase; margin:0 0 28px; position:relative;
   z-index:1;
 }
@@ -149,7 +159,7 @@
   .hero-title{ font-size:2.2rem; line-height:1.14; display: block}
   .hero-date { font-size:12px; }
 
-  .splash-bg{ width:40%; height:80%; top:60px; }
+  .splash-bg{ width:0%; height:0%; top:60px; }
 
 }
 
