@@ -1,7 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  font-family: system-ui, Avenir, Helvetica, Arial, "Druk Wide Cyr", sans-serif;
   width: 100%;
   height: 100%;
 
@@ -16,9 +14,12 @@
 }
 
 a {
-  font-weight: 500;
   color: #646cff;
   text-decoration: inherit;
+    font-family: "Druk Wide Cyr", sans-serif;
+}
+a, h1, h2, h3, h4, h5, h6, p {
+    font-family: "Druk Wide Cyr", sans-serif;
 }
 a:hover {
   color: #535bf2;
@@ -35,6 +36,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
+    font-family: "Druk Wide Cyr", sans-serif;
   height: 100%;
   background-color: #000; /* or your global background */
   scroll-behavior: smooth;
@@ -51,21 +53,20 @@ html, body, #root {
   height: 100%;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+/*button {*/
+/*  border-radius: 8px;*/
+/*  border: 1px solid transparent;*/
+/*  padding: 0.6em 1.2em;*/
+/*  font-size: 1em;*/
+/*  font-weight: 500;*/
+/*  font-family: inherit;*/
+/*  background-color: #1a1a1a;*/
+/*  cursor: pointer;*/
+/*  transition: border-color 0.25s;*/
+/*}*/
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+    font-family: "Druk Wide Cyr", sans-serif;
 }
 button:hover {
   border-color: #646cff;
