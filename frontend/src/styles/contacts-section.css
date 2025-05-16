@@ -5,7 +5,7 @@
   background:#000;
   color:#fff;
   padding:80px 5vw;                /* roomy side-gutters on phones */
-  font-family:"Inter",sans-serif;
+  font-family:"Druk Wide Cyr",sans-serif;
 }
 
 /* ----------------------------------------
@@ -53,14 +53,14 @@
   gap:28px;
 }
 .contact-form h3{
-  font:900 clamp(1.3rem,5.4vw,1.75rem)/1.25 "Russo One",sans-serif;
+  font:900 clamp(1.3rem,5.4vw,1.75rem)/1.25 "Druk Wide Cyr",sans-serif;
   text-transform:uppercase;
   margin:0 0 22px;
 }
 .contact-form label{
   display:flex; flex-direction:column;
   gap:12px;
-  font:700 .85rem/1 "Russo One",sans-serif;
+  font:700 .85rem/1 "Druk Wide Cyr",sans-serif;
   text-transform:uppercase;
   color:#7f7f91;
 }
@@ -94,7 +94,7 @@
   align-self:flex-start;
   margin-top:14px;
   padding:18px 60px;
-  font:900 .95rem "Russo One",sans-serif;
+  font:900 .95rem "Druk Wide Cyr",sans-serif;
   text-transform:uppercase;
   background:#b24eff;
   color:#fff; border:none; border-radius:60px;
