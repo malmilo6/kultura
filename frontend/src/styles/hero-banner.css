@@ -113,10 +113,13 @@
 }
 .hero-sub{
   font-weight:400; font-size:1.15rem; margin:0 0 20px;
+    color:#fff;                          /* ← or #ffffff */
+
 }
 .hero-title{
   font:900 clamp(3rem,6.5vw,5.4rem)/1.05 "Druk Wide Cyr",sans-serif;
   text-transform:uppercase; margin:0 0 28px; position:relative;
+    color:#fff;                          /* ← or #ffffff */
   z-index:1;
 }
 .hero-date{
