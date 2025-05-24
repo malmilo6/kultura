@@ -66,8 +66,9 @@ export const ContactsSection = () => {
           <a className="value phone" href="tel:+0037377965147">(+373) 77 965 147</a>
 
           <p className="label">Email</p>
-          <p className="value email">autoposterprintmd@gmail.com</p>
-        </div>
+<a className="value email" href="mailto:autoposterprintmd@gmail.com">
+  autoposterprintmd@gmail.com
+</a></div>
 
         {/* RIGHT: form */}
         <form ref={formRef} onSubmit={handleSubmit} className="contact-form">

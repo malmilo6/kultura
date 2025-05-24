@@ -132,3 +132,11 @@
 .value.phone:hover {
   text-decoration: underline;   /* or leave none if you prefer */
 }
+
+.value.email {
+  color: inherit;          /* white, like rest of text */
+  text-decoration: none;
+}
+.value.email:hover {
+  text-decoration: underline;   /* or none, your choice */
+}

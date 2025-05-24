@@ -179,6 +179,11 @@
 
   }
 
+
+  .badge h3 {
+    font-size: 27.5px;
+  }
+
   /* left column (headline + button) */
   .t-left{
     gap: 28px;
