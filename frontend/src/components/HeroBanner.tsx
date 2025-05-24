@@ -1,12 +1,12 @@
-/*  src/components/HeroBanner.tsx  */
-import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import heroVideo from "../assets/back_video.mp4";    // ← your mp4 / webm
 import logo      from "../assets/logo.png";
 import paint     from "../assets/paint-splash.png";
 import "../styles/hero-banner.css";
+import {LanguageToggle} from "./LanguageSwitcher.tsx";
 
 export const HeroBanner = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const { t } = useTranslation();     // ← hook
 
   return (
       <section className="hero-banner" id="tickets">
@@ -28,14 +28,14 @@ export const HeroBanner = () => {
           <img src={logo} alt="Kultura logo" className="hero-logo"/>
 
           {/* desktop nav / mobile slide-down */}
-          <nav className={`hero-nav ${menuOpen ? "open" : ""}`}>
-            <ul className="nav-links" onClick={() => setMenuOpen(false)}>
-              <li><a href="#about">О ФЕСТИВАЛЕ</a></li>
-              <li><a href="#location">ЛОКАЦИЯ</a></li>
-              <li><a href="#hotels">ОТЕЛИ</a></li>
-              <li><a href="#contact">КОНТАКТЫ</a></li>
-            </ul>
-          </nav>
+          {/*<nav className={`hero-nav ${menuOpen ? "open" : ""}`}>*/}
+          {/*  <ul className="nav-links" onClick={() => setMenuOpen(false)}>*/}
+          {/*    <li><a href="#about">{t("nav.about")} </a></li>*/}
+          {/*    <li><a href="#location">ЛОКАЦИЯ</a></li>*/}
+          {/*    <li><a href="#hotels">ОТЕЛИ</a></li>*/}
+          {/*    <li><a href="#contact">КОНТАКТЫ</a></li>*/}
+          {/*  </ul>*/}
+          {/*</nav>*/}
 
           <div className="cta-group">
             <button
@@ -44,7 +44,7 @@ export const HeroBanner = () => {
                     "https://docs.google.com/forms/d/e/1FAIpQLSdhx8wWoWIua2H98Xuq9sfRbyMlieVj2Y9KfOYgykoa2Wl3KA/viewform",
                     "_blank", "noopener")}
             >
-              Стать участником
+              {t("cta.participant")}
             </button>
 
             <button
@@ -53,28 +53,25 @@ export const HeroBanner = () => {
                     "https://afisha.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival",
                     "_blank", "noopener")}
             >
-              Купить билет
+              {t("cta.ticket")}
             </button>
           </div>
 
-          <button
-              className={`burger ${menuOpen ? "open" : ""}`}
-              onClick={() => setMenuOpen(o => !o)}
-              aria-label="Toggle navigation"
-          ><span/><span/><span/></button>
+            <LanguageToggle/>
+
         </header>
 
         {/* ——— HERO COPY (unchanged) ——— */}
         <div className="hero-copy">
           <img src={paint} alt="" className="splash-bg"/>
           <h3 className="hero-sub">
-            Автофестиваль выставочного формата, под открытым небом
+              {t("hero.subtitle")}
           </h3>
           <h1 className="hero-title">
             MOLDOVA AUTO<br/>WEEKEND FESTIVAL
           </h1>
           <p className="hero-date">
-            9-10 АВГУСТА 2015 • ARENA CHIȘИНĂU, MOLDOVA
+            {t("hero.date")}
           </p>
         </div>
       </section>

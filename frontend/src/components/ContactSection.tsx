@@ -2,6 +2,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/contacts-section.css";
+import {useTranslation} from "react-i18next";
 
 /* ─────── EmailJS credentials ─────── */
 const SERVICE_ID  = "service_r9jt6dr";
@@ -11,7 +12,7 @@ const PUBLIC_KEY  = "8PtFzPpd5L4kRRwLx";
 export const ContactsSection = () => {
   const formRef   = useRef<HTMLFormElement>(null);
   const [sending, setSending] = useState(false);
-
+  const {t} = useTranslation();
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current || sending) return;
@@ -36,12 +37,12 @@ export const ContactsSection = () => {
         PUBLIC_KEY
       )
       .then(() => {
-        alert("Спасибо! Мы свяжемся с вами.");
+        alert(t("contacts.toast.ok"));
         formRef.current?.reset();
         setSending(false);
       })
       .catch(err => {
-        alert("Ошибка отправки: " + err.text);
+        alert(t("contacts.toast.fail", { err: err.text || err }));
         setSending(false);
       });
   };
@@ -53,16 +54,16 @@ export const ContactsSection = () => {
 
         {/* LEFT: static phone / mail */}
         <div className="contacts-info">
-          <h2>Контакты</h2>
+          <h2>{t("contacts.title")}</h2>
 
-          <p className="label">По вопросам регистрации участников</p>
-          <p className="value phone">(+373) 69 537 981</p>
+          <p className="label">{t("contacts.labels.registration")} </p>
+          <a className="value phone" href="tel:+37369537981">(+373) 69 537 981</a>
 
-          <p className="label">По коммерческим вопросам</p>
-          <p className="value phone">(+373) 69 909 735</p>
+          <p className="label">{t("contacts.labels.commercial")}</p>
+          <a className="value phone" href="tel:+37369909735">(+373) 69 909 735</a>
 
-          <p className="label">Для Приднестровья</p>
-          <p className="value phone">(+373) 77 965 147</p>
+          <p className="label">{t("contacts.labels.transnistria")}</p>
+          <a className="value phone" href="tel:+0037377965147">(+373) 77 965 147</a>
 
           <p className="label">Email</p>
           <p className="value email">autoposterprintmd@gmail.com</p>
@@ -70,15 +71,15 @@ export const ContactsSection = () => {
 
         {/* RIGHT: form */}
         <form ref={formRef} onSubmit={handleSubmit} className="contact-form">
-          <h3>Остались вопросы?<br/>Заполните форму ниже</h3>
+          <h3>{t("contacts.form.title")}</h3>
 
           <label>
-            <span>Имя</span>
-            <input name="name"  placeholder="Ваше имя" required/>
+            <span>{t("contacts.form.fields.name")}</span>
+            <input name="name"  placeholder={t("contacts.form.fields.name")} required/>
           </label>
 
           <label>
-            <span>Номер телефона</span>
+            <span>{t("contacts.form.fields.phone")}</span>
             <input name="phone" type="tel" placeholder="+373 ___ ___ ___" required/>
           </label>
 
@@ -88,12 +89,12 @@ export const ContactsSection = () => {
           </label>
 
           <label>
-            <span>Сообщение</span>
-            <textarea name="message" rows={4} placeholder="Ваш вопрос…"/>
+            <span>{t("contacts.form.fields.message")}</span>
+            <textarea name="message" rows={4} placeholder={t("contacts.form.fields.message")}/>
           </label>
 
           <button className="submit-btn" disabled={sending}>
-            {sending ? "Отправляем…" : "Отправить"}
+            {sending ? t("contacts.form.sending") : t("contacts.form.submit")}
           </button>
         </form>
 

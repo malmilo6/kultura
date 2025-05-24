@@ -1,0 +1,89 @@
+{
+  "nav": {
+    "about":    "About",
+    "location": "Location",
+    "hotels":   "Hotels",
+    "contact":  "Contacts"
+  },
+  "cta": {
+    "participant": "Become a participant",
+    "ticket":      "Buy ticket"
+  },
+  "hero": {
+    "subtitle": "An open-air, exhibition-style auto-festival",
+    "title":    "MOLDOVA AUTO<br/>WEEKEND FESTIVAL",
+    "date":     "9-10 AUGUST 2015 • ARENA CHIȘINĂU, MOLDOVA"
+  },
+    "cards": {
+    "ticket": {
+      "title": "Tickets",
+      "btn":   "Buy ticket",
+      "date":  "August",
+      "arena": "Arena Chișinău, Moldova"
+    },
+    "participant": {
+      "title":    "Become a participant",
+      "subtitle": "Exhibition registration",
+      "btn":      "Register"
+    }
+  },
+    "about": {
+    "title": "About festival",
+    "brand": "KULTURA Auto Festival",
+    "intro": "— is an open-air exhibition-format car festival that brings together only iconic vehicles. It celebrates stylish cars, graffiti and urban culture — a two-day event under the open sky.",
+    "cards": {
+      "expo":        "Exhibition",
+      "battle":      "Car battles",
+      "graffiti":    "Graffiti",
+      "partners":    "Partner zones",
+      "dj":          "DJ",
+      "food":        "Food court"
+    },
+    "ribbon": "9-10 AUGUST 2015 • ARENA CHIȘINĂU, MOLDOVA • "
+  },
+  "location": "Location",
+    "hotels": {
+      "hotels": "Hotels",
+      "partner": "Looking for a partner/sponsor!",
+    "about": "A convenient option for accommodation will be hotels located in the city of Chisinau. We are open to cooperation and will be happy to add your hotel to the recommended list!",
+    "hotel": "Your hotel",
+    "book": "Book hotel",
+    "contact": "Contact us"
+  },
+    "contacts": {
+    "title": "Contacts",
+
+    "labels": {
+      "registration": "Participant registration",
+      "commercial":   "Commercial enquiries",
+      "transnistria": "For Transnistria",
+      "email":        "Email"
+    },
+
+    "form": {
+      "title": "Still have questions?\nFill out the form below",
+      "fields": {
+        "name":        "Name",
+        "phone":       "Phone number",
+        "email":       "Email",
+        "message":     "Message"
+      },
+      "ph": {
+        "name":    "Your name",
+        "phone":   "+373 ___ ___ ___",
+        "email":   "you@mail.com",
+        "message": "Your question…"
+      },
+      "submit":   "Send",
+      "sending":  "Sending…"
+    },
+
+    "toast": {
+      "ok":   "Thank you! We will contact you shortly.",
+      "fail": "Send error: {{err}}"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  }
+}

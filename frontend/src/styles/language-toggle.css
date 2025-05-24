@@ -1,0 +1,47 @@
+/*  src/components/language-toggle.css  */
+.lang-toggle{
+  font-family: "Druk Wide Cyr", sans-serif;
+    font-size: 20px;
+  color:#fff;
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  user-select:none;
+  /* subtle glow so the white letters stay readable on bright frames */
+  text-shadow:0 0 6px rgba(0,0,0,.45);
+  transition:transform .15s;
+}
+.lang-toggle:focus-visible,
+.lang-toggle:hover{
+  transform:scale(1.1);        /* tiny pop on hover / focus */
+}
+.lang-toggle:focus { outline:none; }
+
+@media (max-width:768px){
+    .lang-toggle{
+        font-size:12px;
+    }
+}
+
+
+/*!* language-toggle.css *!*/
+/*.lang-toggle {*/
+/*  color:#fff;*/
+/*  font:900 .85rem/1 "Druk Wide Cyr",sans-serif;*/
+/*  padding:6px 12px;*/
+/*  border-radius:6px;*/
+/*  cursor:pointer;*/
+/*  transition:transform .1s;*/
+/*}*/
+
+/*!* remove extra focus ring added by the browser *!*/
+/*.lang-toggle:focus { outline:none; }*/
+
+/*!* keep an accessible ring for keyboard users *!*/
+/*.lang-toggle:focus-visible {*/
+/*  outline:3px solid #b24eff;   !* or any brand colour you prefer  *!*/
+/*  outline-offset:2px;*/
+/*}*/
+
+/*!* optional micro-interaction *!*/
+/*.lang-toggle:active { transform:scale(.95); }*/

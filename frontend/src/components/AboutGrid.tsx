@@ -6,16 +6,19 @@ import picture3 from "../assets/picture3.png"
 import picture4 from "../assets/picture4.png"
 import picture5 from "../assets/picture5.png"
 import picture6 from "../assets/picture6.png"
+import {useTranslation} from "react-i18next";
 
 export const AboutGrid = () => {
+const {t} = useTranslation();
+
   const items = [
-    { title: "ВЫСТАВКА",       image: picture1 },
-    { title: "АВТОБАТТЛЫ",     image: picture2 },
-    { title: "ГРАФФИТИ",       image: picture3 },
-    { title: "ЗОНЫ ПАРТНЁРОВ", image: picture4 },
-    { title: "DJ",             image: picture5 },
-    { title: "ФУДКОРТ",        image: picture6 },
-  ];
+  { key: "expo",     image: picture1 },
+  { key: "battle",   image: picture2 },
+  { key: "graffiti", image: picture3 },
+  { key: "partners", image: picture4 },
+  { key: "dj",       image: picture5 },
+  { key: "food",     image: picture6 },
+];
 
 const ribbons = ["purple", "green"];   // add more colours if you wish
 const baseText =
@@ -30,21 +33,19 @@ const ribbonText = baseText.repeat(10);
 
           {/* ---------- INTRO ROW ---------- */}
           <div className="about-intro">
-              <h2>О ФЕСТИВАЛЕ</h2>
+              <h2>{t(`about.title`)}</h2>
 
               <p>
-                  <strong className="green">KULTURA Auto Festival</strong>&nbsp;— это
-                  автофестиваль выставочного формата, на котором мы собрали только
-                  культовые автомобили. Он посвящён стильным автомобилям, граффити и
-                  урбан культуре. 2 дня фестиваля&nbsp;под&nbsp;открытым небом.
+                  <strong className="green">{t(`about.brand`)}</strong>
+                  {t(`about.intro`)}
               </p>
           </div>
 
           {/* ---------- IMAGE GRID ---------- */}
           <div className="about-grid">
-              {items.map(({title, image}) => (
+              {items.map(({key, image}) => (
                   <div
-                      key={title}
+                      key={key}
                       className="about-card"
                       style={{
                           backgroundImage: `url(${image})`,
@@ -52,7 +53,7 @@ const ribbonText = baseText.repeat(10);
                           aspectRatio: "1 / 1",
                       }}
                   >
-                      <span className="card-label">{title}</span>
+                      <span className="card-label">{t(`about.cards.${key}`)}</span>
                   </div>
               ))}
           </div>

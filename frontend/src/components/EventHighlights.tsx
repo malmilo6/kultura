@@ -1,8 +1,12 @@
 import ticketBg from "../assets/ticket1_d.png";
 import badgeBg  from "../assets/ticket2_d.png";
 import "../styles/event-highlights.css";
+import { useTranslation } from "react-i18next";
 
-export const EventHighlights = () => (
+export const EventHighlights = () => {
+  const { t } = useTranslation();     // ← hook
+
+    return (
     <section className="event-highlights">
 
         {/* ---- Ticket card ---- */}
@@ -12,33 +16,33 @@ export const EventHighlights = () => (
         >
             {/* left half */}
             <div className="t-left">
-                <h3>БИЛЕТЫ</h3>
+                <h3>{t("cards.ticket.title")}</h3>
                 <button
                 onClick={() =>
                     window.open("https://afisha.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival")
-                }>КУПИТЬ БИЛЕТ</button>
+                }>{t("cards.ticket.btn")}</button>
             </div>
 
             {/* right half */}
             <div className="t-right">
                 <span className="big-date">9‑10</span>
-                <span className="month">Августа 2025</span>
+                <span className="month">{t("cards.ticket.date")} 2025</span>
                 <small>Arena Chișinău, Moldova</small>
             </div>
         </div>
 
         {/* ---- Participant badge ---- */}
         <div className="card badge" style={{backgroundImage: `url(${badgeBg})`}}>
-            <h3>СТАТЬ УЧАСТНИКОМ</h3>
-            <p>Регистрация на выставку</p>
+            <h3>{t("cards.participant.title")}</h3>
+            <p>{t("cards.participant.subtitle")}</p>
             <button
                             onClick={() =>
                       window.open(
                           "https://docs.google.com/forms/d/e/1FAIpQLSdhx8wWoWIua2H98Xuq9sfRbyMlieVj2Y9KfOYgykoa2Wl3KA/viewform",
                           "_blank"
                       )
-                  }>Зарегистрироваться</button>
+                  }>{t("cards.participant.btn")}</button>
         </div>
 
-    </section>
-);
+    </section>)
+};

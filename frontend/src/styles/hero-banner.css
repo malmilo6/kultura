@@ -155,7 +155,6 @@
   /* logo  ▸  BUY pill  ▸  burger */
   .hero-logo   { height:46px; }
   .buy-pill    { order:1; padding:10px 26px; font-size: 10px; font-family: 'Druk Wide Cyr', 'sans-serif';text-transform: uppercase }
-  .burger      { order:2; display:flex; }
 
   /* nav becomes slide‑down panel */
   .hero-nav{

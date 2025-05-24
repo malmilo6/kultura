@@ -7,9 +7,20 @@
   font-family:"Inter",sans-serif;
 }
 .hotels-section h2{
-  font:900 2.6rem/1 "Russo One",sans-serif;
+  font-family: "Druk Wide Cyr",sans-serif;
+  font-size: 48px;
   text-transform:uppercase;
   margin-bottom:60px;
+}
+
+@media(max-width:768px){
+    .hotels-section h2{
+  font-family:"Druk Wide Cyr",sans-serif;
+  font-weight:700;
+  font-size:30px;
+  text-transform:uppercase;
+  margin:0 0 46px;
+}
 }
 
 /* ---------- GRID ---------- */

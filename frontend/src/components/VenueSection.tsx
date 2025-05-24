@@ -1,9 +1,13 @@
 import "../styles/venue-section.css";
-import arenaImg from "../assets/arena.png";               // big photo
+import arenaImg from "../assets/arena.png";
+import {useTranslation} from "react-i18next";               // big photo
 
-export const VenueSection = () => (
+export const VenueSection = () => {
+    const {t} = useTranslation();
+
+    return (
   <section className="venue-section" id="location">
-    <h2>Площадка</h2>
+    <h2>{t("location")}</h2>
 
     <div className="venue-grid">
 
@@ -26,4 +30,4 @@ export const VenueSection = () => (
 
     </div>
   </section>
-);
+);}

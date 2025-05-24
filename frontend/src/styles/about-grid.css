@@ -179,7 +179,7 @@
   .about-section{ padding:80px 4vw; }
   .card-label{ font-size:1.5rem; }
     .about-intro h2{
-    white-space: nowrap;                 /* no wrapping        */
-    font-size: clamp(1.8rem, 10vw, 2.6rem); /* fluid size 1.8‑2.6 rem */
+    white-space: nowrap;
+      font-size:2rem;
   }
 }

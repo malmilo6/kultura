@@ -1,10 +1,14 @@
 /*  src/components/HotelsSection.tsx  */
 import "../styles/hotels-section.css";
-import hotelImg from "../assets/hotels.png";   /* big banner photo */
+import hotelImg from "../assets/hotels.png";
+import {useTranslation} from "react-i18next";
 
-export const HotelsSection = () => (
+export const HotelsSection = () => {
+      const {t} = useTranslation();
+
+    return (
   <section className="hotels-section" id="hotels">
-    <h2>Отели</h2>
+    <h2>{t("hotels.hotels")}</h2>
 
     <div className="hotels-grid">
 
@@ -13,37 +17,35 @@ export const HotelsSection = () => (
         className="hotel-photo"
         style={{ backgroundImage: `url(${hotelImg})` }}
       >
-        <button>Забронировать номер</button>
+        <button>    {t("hotels.book")}</button>
       </figure>
 
       {/* ---- Text side ---- */}
 {/* ---- Promo / text card ---- */}
 <div className="hotel-text">
 
-  <h3>В&nbsp;поиске&nbsp;партнёров</h3>
+  <h3>{t("hotels.partner")}</h3>
 
   <p>
-    Удобным вариантом для проживания станут отели, расположенные в&nbsp;городе
-    Кишинёв. Мы открыты к&nbsp;сотрудничеству и&nbsp;будем рады
-    добавить ваш отель в&nbsp;рекомендованный список!
+    {t("hotels.about")}
   </p>
 
   <ul className="hotel-list">
-    <li>Ваш отель #1</li>
-    <li>Ваш отель #2</li>
-    <li>Ваш отель #3</li>
-    <li>Ваш отель #4</li>
-    <li>Ваш отель #5</li>
+    <li>{t("hotels.hotel")}#1</li>
+    <li>{t("hotels.hotel")}#2</li>
+    <li>{t("hotels.hotel")}#3</li>
+    <li>{t("hotels.hotel")}#4</li>
+    <li>{t("hotels.hotel")}#5</li>
   </ul>
 
   <button
     className="hotel-cta"
     onClick={() => window.open("mailto:autoposterprintmd@gmail.com")}
   >
-    Связаться
+        {t("hotels.contact")}
   </button>
 </div>
 
     </div>
   </section>
-);
+);}

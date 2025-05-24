@@ -3,7 +3,9 @@ import igIcon from "../assets/igIcon.png"; // 32 × 32 px purple square
 import tgIcon from "../assets/tgIcon.png";
 import "../styles/footer.css"
 
-export const Footer = () => (
+export const Footer = () => {
+
+  return (
   <footer className="site-footer">
     {/* ───────── TOP ROW ───────── */}
     <div className="footer-top">
@@ -23,15 +25,15 @@ export const Footer = () => (
       </div>
 
       {/* legal links */}
-      <ul className="legal">
-        <li><a href="/offer.pdf"      target="_blank">Оферта</a></li>
-        <li><a href="/privacy.pdf"    target="_blank">Политика конфиденциальности</a></li>
-      </ul>
+      {/*<ul className="legal">*/}
+      {/*  <li><a href="/offer.pdf"      target="_blank">Оферта</a></li>*/}
+      {/*  <li><a href="/privacy.pdf"    target="_blank">Политика конфиденциальности</a></li>*/}
+      {/*</ul>*/}
     </div>
 
     {/* ───────── BOTTOM ROW ───────── */}
     <div className="footer-bottom">
-      Moldova Auto Weekend Festival © {new Date().getFullYear()} Все права защищены
+      Moldova Auto Weekend Festival © {new Date().getFullYear()} All rights reserved
     </div>
   </footer>
-);
+);}

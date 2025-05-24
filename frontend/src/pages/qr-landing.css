@@ -1,0 +1,19 @@
+/*  src/pages/qr-landing.css  */
+.qr-landing{
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  gap:48px; width:100vw; height:100vh; padding:0 24px; box-sizing:border-box;
+  background:#000; color:#fff; text-align:center; font-family:"Inter",sans-serif;
+}
+.qr-landing h1{
+  font:900 clamp(2.8rem,8vw,5rem)/1 "Druk Wide Cyr",sans-serif;
+  text-transform:uppercase; margin:0;
+}
+.qr-landing .btn{
+  width:min(420px,90vw); padding:22px 0; border-radius:60px;
+  font:900 1rem "Russo One",sans-serif; text-transform:uppercase; cursor:pointer;
+  transition:.25s;
+}
+.qr-landing .purple{background:#b24eff;border:3px solid #b24eff;color:#fff;}
+.qr-landing .purple:hover{background:#963bdd;border-color:#963bdd;}
+.qr-landing .outline{background:transparent;border:3px solid #fff;color:#fff;}
+.qr-landing .outline:hover{background:#fff;color:#000;}
