@@ -27,7 +27,6 @@ export const EventHighlights = () => {
             <div className="t-right">
                 <span className="big-date">9‑10</span>
                 <span className="month">{t("cards.ticket.date")} 2025</span>
-                <small>Arena Chișinău, Moldova</small>
             </div>
         </div>
 
