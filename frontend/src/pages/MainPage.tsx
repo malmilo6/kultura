@@ -5,6 +5,7 @@ import { VenueSection }      from "../components/VenueSection";
 import { HotelsSection }     from "../components/HotelsSection";
 import { ContactsSection }   from "../components/ContactSection";
 import { Footer }            from "../components/Footer";
+import {PartnersSection} from "../components/PartnersSection.tsx";
 
 export const MainPage = () => (
   <>
@@ -14,6 +15,7 @@ export const MainPage = () => (
     <VenueSection />
     <HotelsSection />
     <ContactsSection />
+    <PartnersSection/>
     <Footer />
   </>
 );

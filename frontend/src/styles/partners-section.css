@@ -1,0 +1,53 @@
+/* ─────────  SECTION  ───────── */
+.partners-section{
+  background:#000;
+  padding:100px 4vw 120px;
+  text-align:center;
+  font-family:"Russo One",sans-serif;
+  overflow:hidden;              /* hides the drop-shadow peek */
+}
+
+.partners-title{
+  color:#fff;
+  font:900 2rem/1 "Druk Wide Cyr",sans-serif;
+  margin:0 0 60px;
+  letter-spacing:1px;
+    text-transform: uppercase;
+}
+
+/* ─────────  GRID  ───────── */
+.partners-grid{
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:64px 80px;                /* row / column gap          */
+  place-items:center;
+}
+
+/* …the square logo boxes … */
+.partner{
+  width:140px;                  /* same size for all screens */
+  height:140px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .3s, filter .3s;
+}
+.partner img{
+  max-width:100%;
+  max-height:100%;
+  object-fit:contain;}
+
+
+/* hover pops the logo back to 100 % */
+.partner:hover{
+  transform:scale(1.05);
+  /*filter:brightness(2);*/
+}
+
+/* ─────────  MOBILE  ───────── */
+@media(max-width:620px){
+  .partners-grid{ gap:40px 32px; }
+  .partner{ width:120px; height:120px; }
+}

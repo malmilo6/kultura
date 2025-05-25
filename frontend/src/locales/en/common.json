@@ -83,6 +83,7 @@
       "fail": "Send error: {{err}}"
     }
   },
+  "partners": "Partners",
   "footer": {
     "rights": "All rights reserved"
   }

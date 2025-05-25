@@ -181,7 +181,7 @@
 
 
   .badge h3 {
-    font-size: 27.5px;
+    font-size: 25px;
   }
 
   /* left column (headline + button) */
@@ -214,7 +214,7 @@
   }
 
     .ticket  button{
-    width: 300px;                  /* full card width */
+    width: 71vw;                  /* full card width */
     max-width:420px;             /* but not wider than desktop pill */
     margin-top: 80px;
     align-self:center;           /* centre inside card */
