@@ -22,7 +22,7 @@ const {t} = useTranslation();
 
 const ribbons = ["purple", "green"];   // add more colours if you wish
 const baseText =
-  "9‑10 АВГУСТА 2015 • ARENA CHIȘINĂU, MOLDOVA • ";
+  "9‑10 АВГУСТА 2025 • ARENA CHIȘINĂU, MOLDOVA • ";
 
 // repeat the phrase 10× (or more) with String.repeat()
 const ribbonText = baseText.repeat(10);
