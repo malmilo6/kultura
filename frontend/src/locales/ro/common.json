@@ -1,0 +1,97 @@
+{
+  "nav": {
+    "about":    "Despre",
+    "location": "Locație",
+    "hotels":   "Hoteluri",
+    "contact":  "Contacte"
+  },
+  "cta": {
+    "participant": "Devino participant",
+    "ticket":      "Cumpără bilet"
+  },
+  "hero": {
+    "subtitle": "Un festival auto expozițional în aer liber",
+    "title":    "MOLDOVA AUTO<br/>WEEKEND FESTIVAL",
+    "date":     "9-10 AUGUST 2025 • ARENA CHIȘINĂU, MOLDOVA"
+  },
+
+  "cards": {
+    "ticket": {
+      "title": "Bilete",
+      "btn":   "Cumpără bilet",
+      "date":  "August",
+      "arena": "Arena Chișinău, Moldova"
+    },
+    "participant": {
+      "title":    "Devino participant",
+      "subtitle": "Înregistrare la expoziție",
+      "btn":      "Înregistrează-te"
+    }
+  },
+
+  "about": {
+    "title": "Despre festival",
+    "brand": "KULTURA Auto Festival",
+    "intro": "— este un festival auto de tip expoziție în aer liber care reunește doar automobile iconice. Celebrează mașinile stilate, graffiti-ul și cultura urbană — două zile de eveniment sub cerul liber.",
+    "cards": {
+      "expo":        "Expoziție",
+      "battle":      "Battle auto",
+      "graffiti":    "Graffiti",
+      "partners":    "Zone parteneri",
+      "dj":          "DJ",
+      "food":        "Food court"
+    },
+    "ribbon": "9-10 AUGUST 2025 • ARENA CHIȘINĂU, MOLDOVA • "
+  },
+
+  "location": "Locație",
+
+  "hotels": {
+    "hotels":  "Hoteluri",
+    "partner": "Căutăm partener / sponsor!",
+    "about":   "O opțiune comodă de cazare sunt hotelurile situate în orașul Chișinău. Suntem deschiși pentru colaborare și vom fi bucuroși să adăugăm hotelul dvs. în lista recomandată!",
+    "hotel":   "Hotelul dvs.",
+    "book":    "Rezervă cameră",
+    "contact": "Contactează-ne"
+  },
+
+  "contacts": {
+    "title": "Contacte",
+
+    "labels": {
+      "registration": "Înscriere participanți",
+      "commercial":   "Întrebări comerciale",
+      "transnistria": "Pentru Transnistria",
+      "email":        "Email"
+    },
+
+    "form": {
+      "title": "Aveți întrebări?\nCompletați formularul de mai jos",
+      "fields": {
+        "name":    "Nume",
+        "phone":   "Număr de telefon",
+        "email":   "Email",
+        "message": "Mesaj"
+      },
+      "ph": {
+        "name":    "Numele dvs.",
+        "phone":   "+373 ___ ___ ___",
+        "email":   "tu@mail.com",
+        "message": "Întrebarea dvs.…"
+      },
+      "submit":  "Trimite",
+      "sending": "Se trimite…"
+    },
+
+    "toast": {
+      "ok":   "Vă mulțumim! Vă vom contacta în curând.",
+      "fail": "Eroare la trimitere: {{err}}"
+    }
+  },
+
+  "partners": "Parteneri",
+
+  "footer": {
+    "rights": "Toate drepturile rezervate"
+  }
+}

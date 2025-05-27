@@ -5,22 +5,33 @@ import "../styles/language-toggle.css";
 export const LanguageToggle = () => {
   const { i18n } = useTranslation();
 
-  // if resolvedLanguage is still undefined, fall back:
-  const currentLang = (i18n.resolvedLanguage || i18n.language || "ru") as
-    | "ru"
-    | "en";
+  /* ── declare the languages we ship ───────────────────── */
+  type Lang = "ru" | "ro" | "en";
+  const langs: Lang[] = ["ru", "ro", "en"];
 
-  const switchLang = () => {
-    i18n.changeLanguage(currentLang === "ru" ? "en" : "ru");
+  /* current language (fallback to ru until i18n is ready) */
+  const current: Lang =
+    (i18n.resolvedLanguage as Lang) || (i18n.language as Lang) || "ru";
+
+  /* work out the next language in the circle              */
+  const next: Lang = langs[(langs.indexOf(current) + 1) % langs.length];
+
+  const switchLang = () => i18n.changeLanguage(next);
+
+  /* short helper for a11y title / tooltip text            */
+  const title: Record<Lang, string> = {
+    ru: "Schimbă în română",
+    ro: "Switch to English",
+    en: "Переключить на русский"
   };
 
   return (
     <button
       className="lang-toggle"
       onClick={switchLang}
-      title={currentLang === "ru" ? "Switch to English" : "Переключить на русский"}
+      title={title[current]}
     >
-      {currentLang.toUpperCase()}
+      {current.toUpperCase()}
     </button>
   );
 };
