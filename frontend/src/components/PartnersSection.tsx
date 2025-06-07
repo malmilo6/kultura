@@ -18,6 +18,9 @@ import gagarin from "../assets/partners/gagarin_car_wash.svg";
 import gocon        from "../assets/partners/GoCon.svg";
 // import caromoto   from "../assets/partners/LOGO CAROMOTO facebook-01.svg";
 import caromoto   from "../assets/partners/caromoto.jpg";
+import rcustoms from "../assets/partners/rcustoms.jpg"
+import cardream from "../assets/partners/cardream.jpeg"
+
 
 import dance      from "../assets/partners/logo dance new.svg";
 import {useTranslation} from "react-i18next";
@@ -25,16 +28,11 @@ import {useTranslation} from "react-i18next";
 // ---------------------------------------------------------------
 
 export const PartnersSection = () => {
-  /* put the logos in an array so we can map over them */
-  // const partners = [
-  //   disel, energy, om, low_house, oc, record,dance,love, sticker,
-  //     nine, afisha, avalon, gagarin, gocon, caromoto,
-  //
-  // ];
+
 
   const partners = [
-      nine, energy, avalon, caromoto, low_house, afisha, om, disel, gagarin, oc, gocon, sticker, record, love, dance
-  ]
+      om, energy, avalon, caromoto, gagarin, rcustoms, low_house, disel, cardream, oc, gocon, sticker, nine, record, love, dance, afisha
+]
 
     const { t } = useTranslation();     // ← hook
 
