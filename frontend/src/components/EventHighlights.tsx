@@ -19,7 +19,7 @@ export const EventHighlights = () => {
                 <h3>{t("cards.ticket.title")}</h3>
                 <button
                 onClick={() =>
-                    window.open("https://afisha.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival")
+                    window.open("https://arenaticket.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival")
                 }>{t("cards.ticket.btn")}</button>
             </div>
 

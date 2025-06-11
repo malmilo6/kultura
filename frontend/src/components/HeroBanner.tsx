@@ -50,7 +50,7 @@ export const HeroBanner = () => {
             <button
                 className="buy-pill"
                 onClick={() => window.open(
-                    "https://afisha.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival",
+                    "https://arenaticket.md/ro/events/afisha-recomanda/15973/moldova-auto-weekend-festival",
                     "_blank", "noopener")}
             >
               {t("cta.ticket")}
