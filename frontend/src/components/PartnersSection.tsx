@@ -20,7 +20,8 @@ import gocon        from "../assets/partners/GoCon.svg";
 import caromoto   from "../assets/partners/caromoto.jpg";
 import rcustoms from "../assets/partners/rcustoms.jpg"
 import cardream from "../assets/partners/cardream.jpeg"
-import brawix from "../assets/partners/img.png"
+import brawix from "../assets/partners/img_2.png"
+import nextlvl from "../assets/partners/img_1.png"
 
 
 
@@ -33,7 +34,7 @@ export const PartnersSection = () => {
 
 
   const partners = [
-      om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel, cardream, oc, gocon, sticker, nine, record, love, dance, afisha
+      om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel, cardream, oc, nextlvl, gocon, sticker, nine, record, love, dance, afisha
 ]
 
     const { t } = useTranslation();     // ← hook
