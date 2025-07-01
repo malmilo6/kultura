@@ -14,14 +14,17 @@ import sticker from "../assets/partners/sticker.jpg"
 import nine        from "../assets/partners/999.svg";
 import afisha   from "../assets/partners/AFISHA logo.svg";
 import avalon      from "../assets/partners/aval0on white.png";
-import gagarin from "../assets/partners/gagarin_car_wash.svg";
+import gagarin from "../assets/partners/gagarinw.jpg";
 import gocon        from "../assets/partners/GoCon.svg";
 // import caromoto   from "../assets/partners/LOGO CAROMOTO facebook-01.svg";
-import caromoto   from "../assets/partners/caromoto.jpg";
+import caromoto   from "../assets/partners/caromotoupd.jpg";
 import rcustoms from "../assets/partners/rcustoms.jpg"
 import cardream from "../assets/partners/cardream.jpeg"
 import brawix from "../assets/partners/img_2.png"
 import nextlvl from "../assets/partners/img_1.png"
+import hotel from "../assets/partners/img_3.png"
+import milomania from "../assets/partners/img_4.png"
+import arti from "../assets/partners/arti.jpg"
 
 
 
@@ -34,7 +37,9 @@ export const PartnersSection = () => {
 
 
   const partners = [
-      om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel, cardream, oc, nextlvl, gocon, sticker, nine, record, love, dance, afisha
+      om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel,
+      cardream, oc, nextlvl, gocon, sticker, nine, record, love, dance, afisha, hotel, milomania
+      , arti
 ]
 
     const { t } = useTranslation();     // ← hook

@@ -149,3 +149,11 @@
     .hotels-section   { padding-top:32px; }
   .hotels-section h2{ margin-bottom:28px; }
 }
+
+.hotel-list a{
+  color:inherit;           /* keep current text colour           */
+  text-decoration:none;    /* remove underline                   */
+}
+.hotel-list a:hover{
+  text-decoration:underline;   /* subtle “it’s clickable” cue    */
+}

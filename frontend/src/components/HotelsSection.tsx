@@ -5,6 +5,7 @@ import {useTranslation} from "react-i18next";
 
 export const HotelsSection = () => {
       const {t} = useTranslation();
+    const waLink = "https://wa.me/37369444577";
 
     return (
   <section className="hotels-section" id="hotels">
@@ -17,35 +18,46 @@ export const HotelsSection = () => {
         className="hotel-photo"
         style={{ backgroundImage: `url(${hotelImg})` }}
       >
-        <button>    {t("hotels.book")}</button>
+        <button   onClick={() => window.open(waLink, "_blank", "noopener")}
+>    {t("hotels.book")}</button>
       </figure>
 
       {/* ---- Text side ---- */}
 {/* ---- Promo / text card ---- */}
-<div className="hotel-text">
+        <div className="hotel-text">
 
-  <h3>{t("hotels.partner")}</h3>
+            <h3>{t("hotels.partner")}</h3>
 
-  <p>
-    {t("hotels.about")}
-  </p>
+            <p>
+                {t("hotels.about")}
+            </p>
 
-  <ul className="hotel-list">
-    <li>{t("hotels.hotel")}#1</li>
-    <li>{t("hotels.hotel")}#2</li>
-    <li>{t("hotels.hotel")}#3</li>
-    <li>{t("hotels.hotel")}#4</li>
-    <li>{t("hotels.hotel")}#5</li>
-  </ul>
+            <ul className="hotel-list">
+                {[
+                    "Hotel Paris",
 
-  <button
-    className="hotel-cta"
-    onClick={() => window.open("mailto:autoposterprintmd@gmail.com")}
-  >
-        {t("hotels.contact")}
-  </button>
-</div>
+                ].map((label, idx) => (
+                    <li key={idx}>
+                        <a
+                            href={waLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {label}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+
+            <button
+                className="hotel-cta"
+                onClick={() => window.open("mailto:autoposterprintmd@gmail.com")}
+            >
+                {t("hotels.contact")}
+            </button>
+        </div>
 
     </div>
   </section>
-);}
+    );
+}
