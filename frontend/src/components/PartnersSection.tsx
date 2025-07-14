@@ -23,6 +23,9 @@ import cardream from "../assets/partners/cardream.jpeg"
 import brawix from "../assets/partners/img_2.png"
 import nextlvl from "../assets/partners/img_1.png"
 import hotel from "../assets/partners/img_3.png"
+import lhotel from "../assets/partners/london_hotel.jpg"
+import bhotel from "../assets/partners/img_6.png"
+import carbon from "../assets/partners/img_5.png"
 import milomania from "../assets/partners/img_4.png"
 import arti from "../assets/partners/arti.jpg"
 
@@ -38,7 +41,7 @@ export const PartnersSection = () => {
 
   const partners = [
       om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel,
-      cardream, oc, nextlvl, gocon, sticker, nine, record, love, dance, afisha, hotel, milomania
+      cardream, oc, nextlvl, gocon, carbon, sticker, nine, record, love, dance, afisha, hotel, lhotel, bhotel, milomania
       , arti
 ]
 
