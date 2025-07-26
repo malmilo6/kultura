@@ -33,6 +33,7 @@ export const HotelsSection = () => {
                 <li className="hotel-list-item" onClick={() => window.open("https://wa.me/37369444577")}>Hotel Paris (+37369444577)</li>
                 <li className="hotel-list-item" onClick={() => window.open("https://wa.me/37360118861")}>London Boutique Hotel (+37360118861)</li>
                 <li className="hotel-list-item" onClick={() => window.open("https://wa.me/37378840484")}>Weekend Boutique Hotel (+37378840484)</li>
+                <li className="hotel-list-item" onClick={() => window.open("https://wa.me/373779312131")}>Bernardazzi Grand Hotel (+37378840484)</li>
             </ul>
 
         </div>

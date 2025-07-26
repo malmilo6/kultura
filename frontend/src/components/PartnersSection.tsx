@@ -28,7 +28,7 @@ import bhotel from "../assets/partners/img_6.png"
 import carbon from "../assets/partners/img_5.png"
 import milomania from "../assets/partners/img_4.png"
 import arti from "../assets/partners/arti.jpg"
-
+import bernardazi from "../assets/partners/img_7.png"
 
 
 import dance      from "../assets/partners/logo dance new.svg";
@@ -40,9 +40,8 @@ export const PartnersSection = () => {
 
 
   const partners = [
-      om, energy, avalon, brawix, caromoto, gagarin, rcustoms, low_house, disel,
-      cardream, oc, nextlvl, gocon, carbon, sticker, nine, record, love, dance, afisha, hotel, lhotel, bhotel, milomania
-      , arti
+      om, energy, avalon, brawix, caromoto, arti, gagarin, rcustoms, low_house, disel,
+      cardream, oc, nextlvl, gocon, carbon, sticker, nine, record, love, dance, afisha, hotel, lhotel, bhotel, bernardazi, milomania
 ]
 
     const { t } = useTranslation();     // ← hook
