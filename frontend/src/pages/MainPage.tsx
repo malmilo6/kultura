@@ -6,6 +6,7 @@ import { HotelsSection }     from "../components/HotelsSection";
 import { ContactsSection }   from "../components/ContactSection";
 import { Footer }            from "../components/Footer";
 import {PartnersSection} from "../components/PartnersSection.tsx";
+import {ProgramMapSection} from "../components/ProgramMap.tsx";
 
 export const MainPage = () => (
   <>
@@ -14,6 +15,7 @@ export const MainPage = () => (
     <AboutGrid />
     <VenueSection />
     <HotelsSection />
+    <ProgramMapSection/>
     <ContactsSection />
     <PartnersSection/>
     <Footer />

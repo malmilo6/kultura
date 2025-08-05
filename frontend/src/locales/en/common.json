@@ -86,5 +86,15 @@
   "partners": "Partners",
   "footer": {
     "rights": "All rights reserved"
+  },
+    "info":   { "title": "Program & Map" },
+  "program": {
+    "title": "Program",
+    "desc":  "Full event schedule (PDF):",
+    "btn":   "Open schedule"
+  },
+  "map": {
+    "title": "Event map",
+    "btn":   "Open map"
   }
 }

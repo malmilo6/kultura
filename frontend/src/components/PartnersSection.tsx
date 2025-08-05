@@ -43,7 +43,7 @@ export const PartnersSection = () => {
 
   const partners = [
       om, energy, avalon, brawix, caromoto, arti, gagarin, rcustoms, low_house, disel,
-      cardream, oc, nextlvl, sporter, buf, gocon, carbon, sticker, nine, record, love, dance, afisha, france, hotel, lhotel, bhotel, bernardazi, milomania
+      cardream, oc, nextlvl, buf, gocon, carbon, sticker, nine, sporter, record, love, dance, afisha, france, hotel, lhotel, bhotel, bernardazi, milomania
 ]
 
     const { t } = useTranslation();     // ← hook
