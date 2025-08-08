@@ -9,7 +9,7 @@ export const ProgramMapSection = () => {
     "https://drive.google.com/drive/folders/1LA6T0S_vScWbXRXjQFuN5oi2TUjN6V2y?usp=sharing";
 
   const mapURL =
-    "https://drive.google.com/file/d/1ILdehw_uHLblmi7o_arkP5mVbn0u0fgK/view?usp=drivesdk";
+    "https://drive.google.com/file/d/1vzRNL3Dp0xuwTAHQCg3ObELQK19L6Ux9/view?usp=sharing";
 
   return (
     <section className="info-section" id="info">
