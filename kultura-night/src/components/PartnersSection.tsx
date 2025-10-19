@@ -14,12 +14,6 @@ type Props = {
 export default function PartnersSection({
   title = "PARTNERS",
   logos = [
-    { src: "/partners/om.svg", alt: "OM" },
-    { src: "/partners/frups-energy.svg", alt: "Frups Energy" },
-    { src: "/partners/avalon.svg", alt: "Avalon Club" },
-    { src: "/partners/brawix.svg", alt: "Brawix" },
-    { src: "/partners/caromoto.svg", alt: "Caromoto" },
-    { src: "/partners/arti-golden.svg", alt: "Arti Golden" },
   ],
 }: Props) {
   return (

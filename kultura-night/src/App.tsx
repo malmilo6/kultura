@@ -10,6 +10,19 @@ import PartnersSection from "./components/PartnersSection.tsx";
 import FooterKultura from "./components/FooterKultura.tsx";
 import ContactKultura from "./components/ContactKultura.tsx";
 
+import caromoto from "../public/caromoto.jpg";
+import rcustoms from "../public/rcustoms.jpg";
+import carbon from "../public/carbon.png";
+import milomania from "../public/milomania.png";
+import ultra from "../public/ultra.jpg";
+import n999 from "../public/999.svg";
+import locals from "../public/locals.jpg";
+import afisha from "../public/afisha.svg";
+import stiri from "../public/stiri.jpg";
+import recordWhite from "../public/record_white.svg";
+import dance from "../public/dance.svg";
+import loveFm from "../public/love_fm.svg";
+
 function App() {
   return (
     <main>
@@ -51,24 +64,22 @@ function App() {
   }}
   email="Autoposterprintmd@gmail.com"
 />
-        <PartnersSection
-        logos={[
-            {src: "/caromoto.jpg", alt:'caromoto'},
-            {src: "/rcustoms.jpg", alt:'rcustoms'},
-            {src: "/carbon.png", alt:'carbon'},
-            {src: "/milomania.png", alt:'milomania'},
-            {src: "/ultra.jpg", alt:'milomania'},
-            {src: "/999.svg", alt:'999'},
-            {src: "/locals.jpg", alt:'locals'},
-            {src: "/afisha.svg", alt:'afisha'},
-            {src: "/locals.jpg", alt:'locals'},
-            {src: "/stiri.jpg", alt:'stiri'},
-            {src: "/record_white.svg", alt:'record'},
-            {src: "/dance.svg", alt:'dance'},
-            {src: "/love_fm.svg", alt:'love'},
-
-        ]
-        }/>
+<PartnersSection
+  logos={[
+    { src: caromoto, alt: "caromoto" },
+    { src: rcustoms, alt: "rcustoms" },
+    { src: carbon, alt: "carbon" },
+    { src: milomania, alt: "milomania" },
+    { src: ultra, alt: "ultra" },
+    { src: n999, alt: "999" },
+    { src: locals, alt: "locals" },
+    { src: afisha, alt: "afisha" },
+    { src: stiri, alt: "stiri" },
+    { src: recordWhite, alt: "record" },
+    { src: dance, alt: "dance" },
+    { src: loveFm, alt: "love" },
+  ]}
+/>
         <FooterKultura
   instagramHref="https://www.instagram.com/kultura_autofestival/"
   telegramHref="https://t.me/kulturafest"

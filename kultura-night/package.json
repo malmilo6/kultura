@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "zip": "# run this from your project root\nzip -r \"kultura-night-$(date +%Y%m%d-%H%M).zip\" . \\\n  -x \"node_modules/*\" \".git/*\" \".next/*\" \".turbo/*\" \\\n     \".cache/*\" \".vscode/*\" \".idea/*\" \"*.log\" \".DS_Store\""
   },
   "dependencies": {
     "framer-motion": "^12.23.24",
