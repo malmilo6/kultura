@@ -1,5 +1,5 @@
 import React from "react";
-
+import {useTranslation} from "react-i18next";
 export type CTA = {
   label: string;
   href?: string;
@@ -27,6 +27,16 @@ export default function HeroBannerKultura({
   primary?: CTA;
   secondary?: CTA;
 }) {
+  const { t } = useTranslation();
+  const dateText = t("hero.dateLine");
+  const taglineText = t("hero.tagline");
+  const primaryLabel = t("cta.register");
+  const secondaryLabel = t("cta.buy");
+
+  dateLine = dateText
+  tagline = taglineText
+  primary.label = primaryLabel;
+  secondary.label = secondaryLabel;
   return (
     <section className="relative overflow-hidden">
       {/* Background image */}

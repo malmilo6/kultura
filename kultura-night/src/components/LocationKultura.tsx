@@ -1,5 +1,6 @@
 // src/components/LocationKultura.tsx
 import { MapPin } from "lucide-react";
+import {useTranslation} from "react-i18next";
 
 type Props = {
   country?: string;
@@ -20,6 +21,7 @@ export default function LocationKultura({
 }: Props) {
   const q = encodeURIComponent(`${venue}, ${address}, ${city}, ${country}`);
   const href = mapUrl || `https://www.google.com/maps/search/?api=1&query=${q}`;
+  const {t} = useTranslation();
 
   return (
     <section id="location" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 sm:py-16 lg:py-20 text-white">
@@ -42,47 +44,11 @@ export default function LocationKultura({
         <div className="absolute inset-x-3 sm:inset-x-6 top-3 sm:top-6">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-black font-extrabold tracking-tight leading-[0.95] text-[36px] sm:text-[56px] lg:text-[80px] drop-shadow">
-              LOCATION
+              {t('location.location')}
             </h2>
 
             <p className="mt-3 sm:mt-4 text-black/90 text-sm sm:text-lg leading-relaxed backdrop-blur-[2px] bg-black/0 rounded-xl">
-              The auto festival takes place in{" "}
-              <a
-                className="text-purple-500 hover:text-purple-200 underline-offset-4 hover:underline"
-                href={href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {country}
-              </a>
-              , in the city of{" "}
-              <a
-                className="text-purple-500 hover:text-purple-200 underline-offset-4 hover:underline"
-                href={href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {city}
-              </a>
-              , at the{" "}
-              <a
-                className="text-purple-500 hover:text-purple-200 underline-offset-4 hover:underline"
-                href={href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {venue}
-              </a>{" "}
-              on{" "}
-              <a
-                className="text-purple-500 hover:text-purple-200 underline-offset-4 hover:underline"
-                href={href}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
-                {address}
-              </a>
-              .
+              {t('location.description')}
             </p>
           </div>
         </div>

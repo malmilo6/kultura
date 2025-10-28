@@ -1,3 +1,4 @@
+import {useTranslation} from "react-i18next";
 
 type Props = {
   title?: string;               // default renders as two lines: EVENT MAP& / PROGRAM
@@ -16,13 +17,20 @@ export default function ProgramMapKultura({
   openLabel = "OPEN",
   qrSrc = "/qr.png",
   qrAlt = "QR code for Program & Map",
-}: Props) {
+}: Props)
+{
+  const { t } = useTranslation();
+  title = t('program.title')
+  description = t('program.description')
+  openLabel = t('program.openLabel')
+  qrAlt = t('program.qrAlt')
+  const qr = t('program.qr')
   return (
     <section id="program" className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 text-white">
       <div className="grid gap-10 lg:grid-cols-2 lg:items-center">
         {/* Left: Heading, text, CTA */}
         <div>
-          <h2 className="font-extrabold tracking-tight leading-[0.9] text-[48px] sm:text-[72px] lg:text-[112px]">
+          <h2 className="font-extrabold tracking-tight leading-[0.9] text-[48px] sm:text-[72px] lg:text-[110px]">
             {title ? (
               <span className="block">{title}</span>
             ) : (
@@ -46,7 +54,7 @@ export default function ProgramMapKultura({
             >
               {openLabel}
             </a>
-            <span className="text-white/90 tracking-wide uppercase text-sm sm:text-base">or use QR‑code!</span>
+            <span className="text-white/90 tracking-wide uppercase text-sm sm:text-base">{qr}</span>
           </div>
         </div>
 

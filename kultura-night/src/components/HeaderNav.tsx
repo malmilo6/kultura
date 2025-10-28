@@ -1,6 +1,8 @@
 // src/components/HeaderNav.tsx
 import { useEffect, useState } from "react";
-import { Menu, X, Globe } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import {LanguageToggle} from "./LanguageSwitcher.tsx";
+import {useTranslation} from "react-i18next";
 
 export default function HeaderNav() {
   const [open, setOpen] = useState(false);
@@ -15,8 +17,16 @@ export default function HeaderNav() {
       };
     }
   }, [open]);
-
+  const { t } = useTranslation();
   const close = () => setOpen(false);
+
+  const home = t('nav.home')
+  const about = t('nav.about')
+  const program = t('nav.program')
+  const contacts = t('nav.contact')
+
+  const register = t('cta.register')
+  const buy = t('cta.buy')
 
   return (
     <>
@@ -30,19 +40,20 @@ export default function HeaderNav() {
 
             {/* Desktop nav */}
             <nav className="hidden md:flex items-center gap-8 text-sm text-white/80">
-              <a href="#" className="font-medium text-white">Home</a>
-              <a href="#about" className="hover:text-white">About</a>
-              <a href="#program" className="hover:text-white">Program & Map</a>
-              <a href="#contact" className="hover:text-white">Contacts</a>
+              <a href="#" className="font-medium text-white">{home}</a>
+              <a href="#about" className="hover:text-white">{about}</a>
+              <a href="#program" className="hover:text-white">{program}</a>
+              <a href="#contact" className="hover:text-white">{contacts}</a>
             </nav>
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-3">
+              <LanguageToggle/>
               <a
                 href="https://forms.gle/h61XgeFLR9ETpTn59"
                 className="rounded-full bg-gradient-to-r from-purple-600 to-indigo-500 px-6 py-2.5 text-sm font-semibold text-white shadow-[0_0_40px_rgba(124,58,237,0.5)] transition hover:from-purple-500 hover:to-indigo-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-300"
               >
-                Register
+                {register}
               </a>
               <a
                 href="https://afisha.md/ro/events/afisha-recomanda/16695/kultura-night"
@@ -50,19 +61,14 @@ export default function HeaderNav() {
                 rel="noreferrer noopener"
                 className="rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-black shadow-md transition hover:bg-white/95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20"
               >
-                Buy Ticket
+                {buy}
               </a>
             </div>
 
             {/* Mobile actions (lang + burger) */}
             <div className="flex items-center gap-3 md:hidden">
-              <button
-                type="button"
-                aria-label="Language"
-                className="grid h-9 w-9 place-items-center rounded-full bg-white/10 text-white/80 ring-1 ring-white/15"
-              >
-                <Globe className="h-5 w-5" />
-              </button>
+              <LanguageToggle />
+
               <button
                 type="button"
                 aria-expanded={open}

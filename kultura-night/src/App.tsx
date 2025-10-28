@@ -13,38 +13,32 @@ import ContactKultura from "./components/ContactKultura.tsx";
 import caromoto from "../public/caromoto.jpg";
 import rcustoms from "../public/rcustoms.jpg";
 import carbon from "../public/carbon.png";
-import milomania from "../public/milomania.png";
-import ultra from "../public/ultra.jpg";
+import milomania from "../public/milo.jpg";
+import ultra from "../public/ultra1.jpg";
 import n999 from "../public/999.svg";
-import locals from "../public/locals.jpg";
+import locals from "../public/locals1.jpg";
 import afisha from "../public/afisha.svg";
-import stiri from "../public/stiri.jpg";
+import stiri from "../public/stiri1.jpg";
 import recordWhite from "../public/record_white.svg";
 import dance from "../public/dance.svg";
 import loveFm from "../public/love_fm.svg";
+import bag from "../public/bag.jpg";
 
 function App() {
   return (
     <main>
       <HeaderNav />
-      <HeroBannerKultura
-        bgSrc="/hero.jpg"                 // place image in public/hero.jpg
-        markSrc="/night-kultura.svg"      // place SVG/PNG in public/night-kultura.svg
-        dateLine="22–23 November, Chisinau, Toro Center"
-        tagline="Welcome to an unforgettable underground experience — a Japanese-inspired car festival that transports you straight into the heart of the 2000s street culture."
-        primary={{ label: "Register", href: "https://forms.gle/h61XgeFLR9ETpTn59" }}
-        secondary={{ label: "Buy Ticket", href: "https://afisha.md/ro/events/afisha-recomanda/16695/kultura-night" }}
-      />
+      <HeroBannerKultura/>
         <AboutKultura
   instagramHref="https://www.instagram.com/kultura_autofestival/"
   telegramHref="https://t.me/kulturafest"
   slides={[
-    { src: "/img_1.png", title: "Car Battles" },
-    { src: "/img_2.png", title: "VR Races" },
-    { src: "/img_3.png", title: "DJ Sets" },
-    { src: "/img_4.png", title: "Stance & Style" },
-    { src: "/img_5.png", title: "Drift Carts" },
-    { src: "/img_6.png", title: "Food Court" },
+      { src: "/img_1.png", title: "about.slides.carBattles" },
+    { src: "/img_2.png", title: "about.slides.vrRaces" },
+    { src: "/img_3.png", title: "about.slides.djSets" },
+    { src: "/img_4.png", title: "about.slides.stanceStyle" },
+    { src: "/img_5.png", title: "about.slides.soundContest" },
+    { src: "/img_6.png", title: "about.slides.foodCourt" },
   ]}
 />
 
@@ -75,6 +69,7 @@ function App() {
     { src: locals, alt: "locals" },
     { src: afisha, alt: "afisha" },
     { src: stiri, alt: "stiri" },
+      {src: bag, alt: "bag"},
     { src: recordWhite, alt: "record" },
     { src: dance, alt: "dance" },
     { src: loveFm, alt: "love" },

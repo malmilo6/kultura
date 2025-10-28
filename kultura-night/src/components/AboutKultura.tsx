@@ -3,6 +3,8 @@
 // ==========================
 import { useEffect, useState } from "react";
 import { Instagram, Send } from "lucide-react";
+import {useTranslation} from "react-i18next";
+
 
 export type AboutSlide = { src: string; title?: string; alt?: string };
 
@@ -10,12 +12,12 @@ export default function AboutKultura({
   description =
     "Kultura NIGHT Auto Festival — Japanese-inspired car festival that transports you straight into the heart of the 2000s street culture. Hidden beneath the city, this vast parking space transforms into a neon-lit paradise where engines roar, lights flicker, and the scent of burnt rubber fills the air.",
   slides = [
-    { src: "/about1.jpg", title: "Car Battles" },
-    { src: "/about2.jpg", title: "VR Races" },
-    { src: "/about3.jpg", title: "DJ Sets" },
-    { src: "/about4.jpg", title: "Stance & Style" },
-    { src: "/about5.jpg", title: "Sound Contest" },
-    { src: "/about6.jpg", title: "Food Court" },
+    { src: "/about1.jpg", title: "about.slides.carBattles" },
+    { src: "/about2.jpg", title: "about.slides.vrRaces" },
+    { src: "/about3.jpg", title: "about.slides.djSets" },
+    { src: "/about4.jpg", title: "about.slides.stanceStyle" },
+    { src: "/about5.jpg", title: "about.slides.soundContest" },
+    { src: "/about6.jpg", title: "about.slides.foodCourt" },
   ],
   telegramHref = "#",
   instagramHref = "#",
@@ -24,7 +26,12 @@ export default function AboutKultura({
   slides?: AboutSlide[];
   telegramHref?: string;
   instagramHref?: string;
-}) {
+})
+{
+  const {t} = useTranslation();
+  description = t('about.description')
+  const about = t('about.about')
+  const us = t('about.us')
   return (
     <section
       id="about"
@@ -39,9 +46,9 @@ export default function AboutKultura({
             id="about-us"
             className="text-[48px] leading-none font-extrabold sm:text-[64px] lg:text-[88px] tracking-tight"
           >
-            <span className="mr-3">ABOUT</span>
+            <span className="mr-3">{about}</span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-indigo-500">
-              US
+              {us}
             </span>
           </h2>
 
@@ -100,7 +107,6 @@ export default function AboutKultura({
 
       {/* Subheading */}
       <h3 className="mt-16 text-center text-2xl font-medium text-white/90">
-        What awaits you
       </h3>
 
       {/* Carousel */}
@@ -119,6 +125,8 @@ export function AboutCarousel({
 }) {
   const isMobile = useMedia("(max-width: 640px)");
 
+  const {t} = useTranslation();
+
   if (!slides || slides.length === 0) {
     return (
       <div
@@ -129,6 +137,7 @@ export function AboutCarousel({
     );
   }
 
+
   if (isMobile) {
     const [index, setIndex] = useState(0);
     const last = slides.length - 1;
@@ -137,6 +146,7 @@ export function AboutCarousel({
     const h = 320;
 
     return (
+
       <div className={className}>
         <div className="relative">
           <div
@@ -159,7 +169,7 @@ export function AboutCarousel({
                   />
                   {s.title && (
                     <figcaption className="absolute left-4 bottom-4 text-white text-xl font-semibold drop-shadow">
-                      {s.title}
+                      {t(s.title)}
                     </figcaption>
                   )}
                 </figure>
@@ -244,7 +254,7 @@ export function AboutCarousel({
                         />
                         {s.title && (
                           <figcaption className="absolute left-4 bottom-4 text-white text-xl font-semibold drop-shadow">
-                            {s.title}
+                            {t(s.title)}
                           </figcaption>
                         )}
                       </figure>
