@@ -11,13 +11,14 @@
     "zip": "# run this from your project root\nzip -r \"kultura-night-$(date +%Y%m%d-%H%M).zip\" . \\\n  -x \"node_modules/*\" \".git/*\" \".next/*\" \".turbo/*\" \\\n     \".cache/*\" \".vscode/*\" \".idea/*\" \"*.log\" \".DS_Store\""
   },
   "dependencies": {
+    "firebase": "^12.5.0",
     "framer-motion": "^12.23.24",
+    "i18next": "^25.2.0",
+    "i18next-browser-languagedetector": "^8.1.0",
     "lucide-react": "^0.546.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "react-i18next": "^16.2.1",
-    "i18next": "^25.2.0",
-    "i18next-browser-languagedetector": "^8.1.0"
+    "react-i18next": "^16.2.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.36.0",

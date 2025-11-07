@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Kultura Submit Score</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    :root{color-scheme:dark light}
+    body{background:#0b0b0b;color:#fff;font-family:system-ui,Segoe UI,sans-serif;padding:24px}
+    input,button{font:inherit;padding:.6rem .8rem;border-radius:12px;border:1px solid #333;background:#111;color:#fff}
+    label{display:block;margin:.5rem 0}
+    .box{max-width:520px;margin:auto;background:#121212;border:1px solid #222;padding:20px;border-radius:16px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .muted{color:#9aa}
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Submit Score</h2>
+    <div class="row">
+      <label>Name <input id="name" placeholder="Max"></label>
+      <label>Time (MM:SS.mmm) <input id="time" placeholder="01:12.345"></label>
+    </div>
+    <button id="btn">Submit</button>
+    <p id="msg" class="muted">Saved to: <code>racing/event-2025/scores</code></p>
+  </div>
+
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, addDoc, collection, serverTimestamp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+  import { getAuth, signInAnonymously }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+
+  const app = initializeApp({
+    apiKey: "AIzaSyBZ9qGTb6mjVCoec-2MYmeCog1iURtMFiE",
+    authDomain: "kultura-e90b7.firebaseapp.com",
+    projectId: "kultura-e90b7",
+    storageBucket: "kultura-e90b7.firebasestorage.app",
+    messagingSenderId: "877903593203",
+    appId: "1:877903593203:web:9d073a3a42663446170186",
+    measurementId: "G-QWT5R5WMM9"
+  });
+
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+  await signInAnonymously(auth);     // ← will succeed once Anonymous is enabled
+
+    // Must be enabled in Console → Authentication → Sign-in method → Anonymous
+    try {
+      await signInAnonymously(auth);
+    } catch (e) {
+      console.error(e);
+      document.getElementById("msg").textContent =
+        "Auth failed (enable Anonymous sign-in in Firebase Console).";
+    }
+
+    function parseMs(t) {
+      const m = t.trim().match(/^((\d+):)?(\d{1,2})(?:\.(\d{1,3}))?$/);
+      if (!m) throw new Error("Bad time format. Use MM:SS.mmm");
+      const min = +(m[2] ?? 0), sec = +m[3];
+      let ms = +(m[4] ?? "0");
+      // normalize .1 → .100, .12 → .120
+      ms = Math.floor(ms * Math.pow(10, 3 - String(ms).length));
+      return (min * 60 + sec) * 1000 + ms;
+    }
+
+    const btn = document.getElementById("btn");
+    const msg = document.getElementById("msg");
+
+    btn.onclick = async () => {
+      const name = document.getElementById("name").value.trim();
+      const timeText = document.getElementById("time").value.trim();
+
+      if (!name || !timeText) {
+        msg.textContent = "Please fill both fields."; return;
+      }
+
+      try {
+        const timeMs = parseMs(timeText);
+
+        // ✅ pass path segments, not a single string
+        const colRef = collection(db, "racing", "event-2025", "scores");
+
+        await addDoc(colRef, {
+          name,
+          timeText,
+          timeMs,
+          createdAt: serverTimestamp()
+        });
+
+        msg.textContent = "Saved!";
+        document.getElementById("name").value = "";
+        document.getElementById("time").value = "";
+      } catch (e) {
+        console.error(e);
+        msg.textContent = "Error: " + (e && e.message ? e.message : e);
+      }
+    };
+  </script>
+</body>
+</html>

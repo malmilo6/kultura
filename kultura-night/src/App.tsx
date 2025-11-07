@@ -23,6 +23,7 @@ import recordWhite from "../public/record_white.svg";
 import dance from "../public/dance.svg";
 import loveFm from "../public/love_fm.svg";
 import bag from "../public/bag.jpg";
+import Scoreboard from "./components/ScoreBoard.tsx";
 
 function App() {
   return (
@@ -58,6 +59,7 @@ function App() {
   }}
   email="Autoposterprintmd@gmail.com"
 />
+        <Scoreboard/>
 <PartnersSection
   logos={[
     { src: caromoto, alt: "caromoto" },
