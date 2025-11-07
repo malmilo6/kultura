@@ -1,103 +1,41 @@
-:root {
-  --bg: #0b0b0b;
-  --panel: #121212;
-  --panel-border: #1e1e1e;
-  --text: #fff;
-  --muted: #a6adbb;
-  --ring: #8b5cf6;         /* purple */
-  --ring-2: #6366f1;       /* indigo */
+/* Chronometer block */
+.ss-chrono{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin:6px 0 14px; padding:12px 14px;
+  background:#0e0e0f; border:1px solid rgba(255,255,255,.10);
+  border-radius:16px;
 }
-
-.ss-wrap {
-  min-height: 72vh;
-  display: grid;
-  place-items: center;
-  padding: 24px;
-  background: transparent; /* page already dark */
-  color: var(--text);
-  font-family: system-ui, Segoe UI, Roboto, sans-serif;
+.ss-time{
+  font:700 28px/1.1 ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  letter-spacing:.5px; color:#fff;
 }
+.ss-chrono-actions{ display:flex; gap:8px; flex-wrap:wrap; }
 
-.ss-card {
-  width: 100%;
-  max-width: 560px;
-  background: color-mix(in oklab, var(--panel), black 6%);
-  border: 1px solid color-mix(in oklab, var(--panel-border), white 4%);
-  border-radius: 20px;
-  padding: 22px;
-  box-shadow: 0 0 40px rgba(124, 58, 237, 0.25);
+/* Buttons (reuse your palette) */
+.ss-btn{ cursor:pointer; border:none; border-radius:12px; padding:.55rem .9rem;
+  background-image:linear-gradient(90deg,#7c3aed,#4f46e5); color:#fff; font-weight:700;
+  box-shadow:0 0 32px rgba(124,58,237,.45);
 }
+.ss-btn:hover{ filter:brightness(1.05); }
+.ss-btn:disabled{ opacity:.6; cursor:not-allowed; }
 
-.ss-title {
-  margin: 0 0 14px 0;
-  font-size: 1.6rem;
-  font-weight: 800;
-  letter-spacing: .2px;
-}
+.ss-btn-ghost{ background:transparent; border:1px solid rgba(255,255,255,.16); box-shadow:none; }
+.ss-btn-warn{ background-image:linear-gradient(90deg,#f59e0b,#ef4444); box-shadow:0 0 28px rgba(239,68,68,.35); }
 
-.ss-form {
-  display: grid;
-  gap: 16px;
-}
-
-.ss-field { display: grid; gap: 6px; }
-
-.ss-label {
-  font-size: .9rem;
-  color: #eaeaea;
-}
-
-.ss-input {
-  appearance: none;
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(0,0,0,.25);
-  color: var(--text);
-  padding: 10px 12px;
-  outline: none;
-  transition: box-shadow .15s ease, border-color .15s ease, background-color .15s ease;
-}
-
-.ss-input::placeholder { color: rgba(255,255,255,.38); }
-
-.ss-input:focus {
-  border-color: color-mix(in oklab, var(--ring), white 12%);
-  box-shadow: 0 0 0 3px color-mix(in oklab, var(--ring), transparent 70%);
-  background: rgba(0,0,0,.32);
-}
-
-.ss-help { margin: 2px 0 0; font-size: .8rem; color: var(--muted); }
-.ss-help code { color: #d9def7; }
-
-/* Button */
-.ss-btn {
-  margin-top: 6px;
-  border: none;
-  cursor: pointer;
-  user-select: none;
-  border-radius: 999px;
-  padding: 12px 22px;
-  font-weight: 700;
-  font-size: 1rem;
-  color: white;
-  background-image: linear-gradient(90deg, var(--ring) 0%, var(--ring-2) 100%);
-  box-shadow: 0 0 40px rgba(124,58,237,.55);
-  transition: transform .12s ease, filter .15s ease, box-shadow .15s ease;
-}
-
-.ss-btn:hover { filter: brightness(1.05); }
-.ss-btn:active { transform: translateY(1px); }
-.ss-btn:disabled { opacity: .6; cursor: not-allowed; }
-
-.ss-status { min-height: 1.5rem; }
-.ss-ok  { color: #6ee7b7; }
-.ss-err { color: #fda4af; }
-.ss-auth{ color: #c7d2fe; }
-.ss-muted { color: var(--muted); }
-
-/* Make the card sit nicely on very small screens */
-@media (max-width: 420px) {
-  .ss-card { padding: 18px; border-radius: 16px; }
-  .ss-title { font-size: 1.4rem; }
-}
+/* Existing containers (in case you don’t have them yet) */
+.ss-wrap{ display:flex; justify-content:center; padding:28px 16px; color:#fff; }
+.ss-card{ width:min(680px,92vw); background:#121214; border:1px solid rgba(255,255,255,.10);
+  border-radius:20px; padding:20px 18px; }
+.ss-title{ font:900 26px/1.1 system-ui,Segoe UI,sans-serif; margin:0 0 10px; }
+.ss-form{ display:grid; gap:14px; }
+.ss-field{ display:grid; gap:6px; }
+.ss-label{ color:rgba(255,255,255,.85); font-weight:600; }
+.ss-input{ background:#0d0d0e; border:1px solid rgba(255,255,255,.15); color:#fff;
+  padding:.6rem .75rem; border-radius:12px; outline:none; }
+.ss-input::placeholder{ color:rgba(255,255,255,.35); }
+.ss-help{ color:rgba(255,255,255,.55); font-size:.8rem; margin-top:2px; }
+.ss-actions{ display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin-top:6px; }
+.ss-status{ min-height:1.5rem; margin-top:6px; }
+.ss-ok{ color:#34d399; } .ss-err{ color:#fb7185; } .ss-auth{ color:#a7b0c0; }
+.ss-muted{ color:rgba(255,255,255,.60); }
+.ss-btn-danger{ background-image:linear-gradient(90deg,#ef4444,#b91c1c); box-shadow:0 0 32px rgba(239,68,68,.45); }
